@@ -225,7 +225,6 @@ if __name__ == "__main__":
             start_time = time.time()
             B, R = optimal_param(threshold, num_perm)
             HASH_RANGES = [(i * R, (i + 1) * R) for i in range(B)]
-            HASH_TABLES = [defaultdict(set) for _ in range(B)]
             group = []
             time_measures["load_dataset"] = time.time()
             for name in data[group_name][:2]:
@@ -279,24 +278,28 @@ if __name__ == "__main__":
                 with_indices=True,
                 desc="Fingerprinting...",
             )
+
             time_measures["minhash"] = time.time() - time_measures["minhash"]
 
             time_measures["clustering"] = time.time()
             batch_size: int = 10000
-            for i in tqdm(
-                range(0, len(embedded), batch_size), dynamic_ncols=True, desc="Iterating MinHashes..."  # noqa: E501
-            ):
-                batch = embedded[i : i + batch_size]
-                for key, Hs in zip(batch["__id__"], batch["__signatures__"]):
-                    for H, hashtable in zip(Hs, HASH_TABLES):
-                        hashtable[H].add(key)
-            for table in tqdm(HASH_TABLES, dynamic_ncols=True, desc="Clustering..."):
-                for cluster in table.values():
+
+            for table_idx in range(B):
+                new_hash_table = defaultdict(set)
+                for i in tqdm(
+                    range(0, len(embedded), batch_size), dynamic_ncols=True, desc="Iterating MinHashes..."  # noqa: E501
+                ):
+                    batch = embedded[i : i + batch_size]
+                    for key, Hs in zip(batch["__id__"], batch["__signatures__"]):
+                        new_hash_table[Hs[table_idx]].add(key)
+
+                for cluster in new_hash_table.values():
                     if len(cluster) <= 1:
                         continue
                     idx = min(cluster)
                     for x in cluster:
                         uf.union(x, idx)
+
             time_measures["clustering"] = time.time() - time_measures["clustering"]
 
             time_measures["filtering"] = time.time()
