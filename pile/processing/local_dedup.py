@@ -1,11 +1,11 @@
 import argparse
-
-from datasets import disable_caching, load_from_disk
-from functools import partial
 from pathlib import Path
 from pprint import pprint
+
+from datasets import disable_caching, load_from_disk
 from squeakily.core import Pipeline
 from squeakily.filter import minhash_dedup
+
 disable_caching()
 
 # Parse the arguments

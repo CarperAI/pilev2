@@ -1,4 +1,3 @@
-from datasets import load_dataset, load_from_disk, Dataset
 import json
 import multiprocessing as mp
 import re
@@ -6,12 +5,11 @@ from collections import defaultdict
 from functools import partial
 from typing import Dict, List, Optional, Set, Tuple, Type
 
-from datasets import Dataset
-from tqdm import tqdm
-import os
+import cython
+from datasets import Dataset, concatenate_datasets, load_from_disk
 from datasketch import MinHash, MinHashLSH
 from dpu_utils.utils.iterators import ThreadedIterator
-
+from tqdm import tqdm
 
 NON_ALPHA = re.compile("[^A-Za-z_0-9]")
 # parameters used in DuplicationIndex
@@ -22,6 +20,7 @@ NUM_PERM = 256
 PATH_COLUMN = "id"
 # name of the "text" column used in deduplication
 CONTENT = "text"
+
 
 def get_min_hash(tokens: List[str]) -> Optional[MinHash]:
     """Compute the MinHash of a code snippet."""
@@ -46,7 +45,9 @@ class DuplicationIndex:
     ):
         self._duplication_jaccard_threshold = duplication_jaccard_threshold
         self._num_perm = NUM_PERM
-        self._index = MinHashLSH(threshold=self._duplication_jaccard_threshold, num_perm=self._num_perm)
+        self._index = MinHashLSH(
+            threshold=self._duplication_jaccard_threshold, num_perm=self._num_perm
+        )
 
         self._duplicate_clusters = defaultdict(set)
 
@@ -58,7 +59,7 @@ class DuplicationIndex:
 
         Args:
             code_key (Tuple of (index, repo_name, path)):
-                Theoritically any hasbale key. Here we use a tuple to retrieve the information later.
+                Theoretically any hashtale key. Here we use a tuple to retrieve the information later.
             min_hash: MinHash of the code_key.
         """
         close_duplicates = self._index.query(min_hash)
@@ -98,12 +99,13 @@ class DuplicationIndex:
         with open(filepath, "w") as f:
             json.dump(duplicate_clusters, f)
 
-import cython
 
 @cython.cfunc
 def _compute_min_hash(element):
     index, data = element
-    min_hash = get_min_hash([t for t in NON_ALPHA.split(data[CONTENT]) if len(t.strip()) > 0])
+    min_hash = get_min_hash(
+        [t for t in NON_ALPHA.split(data[CONTENT]) if len(t.strip()) > 0]
+    )
     if min_hash is not None:
         return (index, data[PATH_COLUMN]), min_hash
 
@@ -128,7 +130,11 @@ def make_duplicate_clusters(dataset_iterator: Type[Dataset], jaccard_threshold: 
     """
     di = DuplicationIndex(duplication_jaccard_threshold=jaccard_threshold)
 
-    for filename, min_hash in tqdm(ThreadedIterator(minhash_iter(enumerate(dataset_iterator)), max_queue_size=10000)):
+    for filename, min_hash in tqdm(
+        ThreadedIterator(
+            minhash_iter(enumerate(dataset_iterator)), max_queue_size=10000
+        )
+    ):
         di.add(filename, min_hash)
 
     # Returns a List[Cluster] where Cluster is List[str] with the filenames.
@@ -252,14 +258,18 @@ def deduplicate_dataset(
         >>> ds_dedup, duplicate_clusters = deduplicate_dataset(ds, jaccard_threshold=0.85)
     """
     duplicate_clusters = make_duplicate_clusters(dataset, jaccard_threshold)
-    duplicate_indices = set(x["base_index"] for cluster in duplicate_clusters for x in cluster)
+    duplicate_indices = set(
+        x["base_index"] for cluster in duplicate_clusters for x in cluster
+    )
     extreme_dict = {}
     extremes_clusters = find_extremes(duplicate_clusters, dataset, jaccard_threshold)
     for extremes in extremes_clusters:
         for element in extremes:
             extreme_dict[element["base_index"]] = element
     remove_indices = duplicate_indices - set(extreme_dict.keys())
-    ds_filter = dataset.filter(lambda x, idx: idx not in remove_indices, with_indices=True)
+    ds_filter = dataset.filter(
+        lambda x, idx: idx not in remove_indices, with_indices=True
+    )
 
     # update duplicate_clusters
     for cluster in duplicate_clusters:
@@ -275,14 +285,27 @@ def deduplicate_dataset(
     print(f"Filtered dataset size: {len(ds_filter)}")
 
     return ds_filter, duplicate_clusters
-from datasets import concatenate_datasets
+
+
 data1 = load_from_disk("PileV2Reddit2020_ver2/PileV2Reddit2020_0")
-data1 = data1.remove_columns(['check_char_repetition_criteria', 'check_flagged_words_criteria', 'check_stop_word_ratio_criteria'])
+data1 = data1.remove_columns(
+    [
+        "check_char_repetition_criteria",
+        "check_flagged_words_criteria",
+        "check_stop_word_ratio_criteria",
+    ]
+)
 print(data1)
 data2 = load_from_disk("PileV2Reddit2020_ver2/PileV2Reddit2020_1")
-data2 = data2.remove_columns(['check_char_repetition_criteria', 'check_flagged_words_criteria', 'check_stop_word_ratio_criteria'])
+data2 = data2.remove_columns(
+    [
+        "check_char_repetition_criteria",
+        "check_flagged_words_criteria",
+        "check_stop_word_ratio_criteria",
+    ]
+)
 print(data2)
-data =  concatenate_datasets([data1, data2])
+data = concatenate_datasets([data1, data2])
 print(data)
 
 dedup_pilev2 = deduplicate_dataset(data)[0]

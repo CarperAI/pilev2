@@ -1,18 +1,20 @@
 from abc import ABC, abstractmethod
-from .utils import (
-    directory_size,
-    download,
-    disk_cache,
-    utf8len,
-    pile_cache_dir,
-    component_exists,
-    schema_from_examples,
-)
-from tqdm import tqdm
-from typing import Generator, List, Optional, Union
-from pathlib import Path
 from logging import getLogger
+from pathlib import Path
 from pprint import pformat
+from typing import Generator, List, Union
+
+from tqdm import tqdm
+
+from .utils import (
+    component_exists,
+    directory_size,
+    disk_cache,
+    download,
+    pile_cache_dir,
+    schema_from_examples,
+    utf8len,
+)
 
 logger = getLogger(__name__)
 
@@ -24,24 +26,21 @@ class Dataset(ABC):
         """
         Human-readable name of the dataset.
         """
-        pass
-    
+
     @property
     @abstractmethod
     def license(self) -> str:
         """
         The license that the data is under.
         """
-        pass
 
     @property
     @abstractmethod
     def urls(self) -> List[str]:
         """Returns a list of urls to download the dataset.
 
-        The most trusted miror should be first.
+        The most trusted mirror should be first.
         """
-        pass
 
     @property
     @abstractmethod
@@ -49,7 +48,6 @@ class Dataset(ABC):
         """
         The sha256 checksum of the dataset.
         """
-        pass
 
     @abstractmethod
     def replicate(self):
@@ -60,7 +58,6 @@ class Dataset(ABC):
         filtering steps, or it's not possible to replicate the scraping
         process, this method should just call self.download()
         """
-        pass
 
     @abstractmethod
     def documents(self) -> Generator[dict, None, None]:
@@ -70,7 +67,6 @@ class Dataset(ABC):
         Each document should be a dictionary with, at minimum, a 'text'
         key containing the text of the document.
         """
-        pass
 
     @abstractmethod
     def paths(self) -> Generator[Union[str, Path], None, None]:
@@ -79,7 +75,6 @@ class Dataset(ABC):
         If the dataset is not on disk, this should still return the
         *expected* filepaths when the dataset is downloaded.
         """
-        pass
 
     @abstractmethod
     def examples(self) -> List[dict]:
@@ -87,7 +82,6 @@ class Dataset(ABC):
 
         Should be callable before downloading the whole dataset.
         """
-        pass
 
     @abstractmethod
     def size_on_disk(self) -> int:
@@ -98,7 +92,6 @@ class Dataset(ABC):
 
         We can verify the hardcoded value by comparing to Dataset._size_on_disk()
         """
-        pass
 
     @abstractmethod
     def size(self) -> int:
@@ -108,7 +101,6 @@ class Dataset(ABC):
         This should be hardcoded for each dataset, we can verify the
         hardcoded value by comparing to Dataset._size()
         """
-        pass
 
     def download(self, force=False):
         """Downloads the final hosted dataset. If necessary, this function

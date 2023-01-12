@@ -1,0 +1,32 @@
+[tool.isort]
+multi_line_output = 3
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --doctest-modules -vv --cov=pile/ "
+testpaths = ["tests"]
+
+[tool.poetry]
+name = "thepilev2"
+version = "2.0"
+description = "The second version of the LLM (Large Language Model) dataset for the python package of The Pile is a collection of text data that can be used to train and evaluate large language models. It includes a diverse set of text data sourced from various sources such as Wikipedia, books, and websites. The dataset is preprocessed and tokenized, making it ready for use in training models. The second version of the dataset is designed to be even larger than the first version, with more text data and a wider range of sources. The goal of this dataset is to provide a comprehensive and diverse set of text data that can be used to train models that can accurately understand and generate a wide range of natural language."
+authors = ["Fabrizio (Mistobaan) Milo <mistobaan@gmail.com>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+datasets = "^2.8.0"
+cython = "^0.29.33"
+typer = "^0.7.0"
+datasketch = "^1.5.8"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+pytest-coverage = "^0.0"
+coverage = "^7.0.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

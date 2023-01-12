@@ -1,26 +1,31 @@
 import argparse
 import pickle
-
-import numpy as np
-
-from datasets import disable_caching, load_from_disk
-from faker import Faker
 from functools import partial
 from pathlib import Path
 from pprint import pprint
+
+import numpy as np
+from datasets import disable_caching, load_from_disk
+from faker import Faker
 from scrubadub import Scrubber
 from scrubadub.detectors import CredentialDetector, TwitterDetector, UrlDetector
-from scrubadub.filth import CreditCardFilth, EmailFilth, PhoneFilth, SocialSecurityNumberFilth
+from scrubadub.filth import (
+    CreditCardFilth,
+    EmailFilth,
+    PhoneFilth,
+    SocialSecurityNumberFilth,
+)
+from squeakily.clean import replace_ip
 from squeakily.core import Pipeline
-from squeakily.clean import replace_ip, normalize_whitespace, normalize_punctuation
 from squeakily.filter import (
     check_char_repetition,
     check_flagged_words,
-    check_stop_word_ratio,
     check_perplexity,
+    check_stop_word_ratio,
     check_word_number,
 )
 from squeakily.helpers import KenlmModel
+
 disable_caching()
 
 kenlm_model = KenlmModel.from_pretrained(
@@ -83,9 +88,11 @@ ignored_datasets = [
     "Bible",
     "OtherWiki",
     "TheStack",
-    "GithubDiffs"
+    "GithubDiffs",
 ]
-dataset_cats = [x.name for x in data_dir.iterdir() if x.is_dir() and x.name not in ignored_datasets][:2]
+dataset_cats = [
+    x.name for x in data_dir.iterdir() if x.is_dir() and x.name not in ignored_datasets
+][:2]
 
 scrubber = Scrubber()
 scrubber.remove_detector(CredentialDetector)
@@ -93,13 +100,19 @@ scrubber.remove_detector(TwitterDetector)
 scrubber.remove_detector(UrlDetector)
 
 faker = Faker()
-normalize_cleaning = lambda x: (
-    scrubber.clean(x)
-            .replace("{{EMAIL}}", EmailFilth.generate(faker))
-            .replace("{{PHONE}}", PhoneFilth.generate(faker))
-            .replace("{{SOCIAL_SECURITY_NUMBER}}", SocialSecurityNumberFilth.generate(faker))
-            .replace("{{CREDIT_CARD}}", CreditCardFilth.generate(faker))
-)
+
+
+def normalize_cleaning(x):
+    return (
+        scrubber.clean(x)
+        .replace("{{EMAIL}}", EmailFilth.generate(faker))
+        .replace("{{PHONE}}", PhoneFilth.generate(faker))
+        .replace(
+            "{{SOCIAL_SECURITY_NUMBER}}", SocialSecurityNumberFilth.generate(faker)
+        )
+        .replace("{{CREDIT_CARD}}", CreditCardFilth.generate(faker))
+    )
+
 
 check_char_repetition_p = partial(check_char_repetition, char_repetition_threshold=0.6)
 check_char_repetition_p.__name__ = "check_char_repetition"
@@ -131,13 +144,19 @@ datasources = [
 stats_dict = pickle.load(open(args.stats_path, "rb"))
 for ds in datasources:
     stats = stats_dict[ds["name"]]
-    word_min, word_max = np.quantile(stats["word_count"]["lst"], [args.min_percentile, args.max_percentile])
-    check_word_number_p = partial(check_word_number, min_word_threshold=word_min, max_word_threshold=word_max)
+    word_min, word_max = np.quantile(
+        stats["word_count"]["lst"], [args.min_percentile, args.max_percentile]
+    )
+    check_word_number_p = partial(
+        check_word_number, min_word_threshold=word_min, max_word_threshold=word_max
+    )
     check_word_number_p.__name__ = "check_word_number"
     ds["filters"].append(check_word_number_p)
 
     perplexity_max = np.quantile(stats["perplexity"]["lst"], args.max_percentile)
-    check_perplexity_p = partial(check_perplexity, model=kenlm_model, perplexity_threshold=perplexity_max)
+    check_perplexity_p = partial(
+        check_perplexity, model=kenlm_model, perplexity_threshold=perplexity_max
+    )
     check_perplexity_p.__name__ = "check_perplexity"
     ds["filters"].append(check_perplexity_p)
 

@@ -1,11 +1,10 @@
 import argparse
-
-from datasets import disable_caching, load_from_disk
-from functools import partial
 from pathlib import Path
 from pprint import pprint
+
+from datasets import disable_caching, load_from_disk
 from squeakily.core import Pipeline
-from squeakily.filter import minhash_dedup
+
 disable_caching()
 
 # Parse the arguments
@@ -61,7 +60,9 @@ for name, ds in zip(dataset_cats, pipeline.datasources):
     num_shards = ds_len // num_files_per_shard
     if num_shards == 0:
         num_shards = 1
-    ds_shards = [ds["dataset"].shard(num_shards, i, contiguous=True) for i in range(num_shards)]
+    ds_shards = [
+        ds["dataset"].shard(num_shards, i, contiguous=True) for i in range(num_shards)
+    ]
     for i, shard in enumerate(ds_shards):
         path = output_dir / f"{name}_shard_{i}.jsonl.zst"
         shard.to_json(

@@ -1,15 +1,13 @@
 import argparse
-import pickle
-
-import numpy as np
-
-from datasets import disable_caching, load_from_disk
-from faker import Faker
 from functools import partial
 from pathlib import Path
 from pprint import pprint
+
+import numpy as np
+from datasets import disable_caching, load_from_disk
 from squeakily.core import Pipeline
 from squeakily.filter import check_compression_ratio
+
 disable_caching()
 
 
@@ -55,9 +53,11 @@ ignored_datasets = [
     "Gutenberg",
     "OtherWiki",
     "TheStack",
-    "GithubDiffs"
+    "GithubDiffs",
 ]
-dataset_cats = [x.name for x in data_dir.iterdir() if x.is_dir() and x.name not in ignored_datasets][:2]
+dataset_cats = [
+    x.name for x in data_dir.iterdir() if x.is_dir() and x.name not in ignored_datasets
+][:2]
 
 tmp_ds = [
     {
@@ -73,9 +73,13 @@ datasources = []
 for idx, ds in enumerate(tmp_ds):
     pipeline = Pipeline([ds])
     pipeline.run(dry_run=True)
-    compression_ratios = pipeline.datasources[0]["dataset"]["check_compression_ratio_criteria"]
+    compression_ratios = pipeline.datasources[0]["dataset"][
+        "check_compression_ratio_criteria"
+    ]
     min_compression_ratio = np.quantile(compression_ratios, args.min_percentile)
-    check_compression_ratio_p = partial(check_compression_ratio, compression_threshold=min_compression_ratio)
+    check_compression_ratio_p = partial(
+        check_compression_ratio, compression_threshold=min_compression_ratio
+    )
     check_compression_ratio_p.__name__ = "check_compression_ratio"
     ds["filters"] = [check_compression_ratio_p]
 

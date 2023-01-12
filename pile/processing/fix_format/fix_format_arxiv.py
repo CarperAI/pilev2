@@ -1,61 +1,63 @@
 import argparse
 import re
-import yaml
+from pathlib import Path
 
 from datasets import disable_caching, load_from_disk
-from pathlib import Path
+
 disable_caching()
 
+
 def get_abs_title(text):
-  # Remove any non-ascii characters and x0007
-  text = re.sub(r'\x07',r'', text)
-  text = re.sub(r'[^\x00-\x7f]',r'', text)
-  # remove single quotes
-  # text = re.sub(r"'",r'', text)
-  lines = text.split("\n")
-  yaml_contents = []
-  in_yaml = False
-  start, end = 0, 0
-  for idx, line in enumerate(lines):
-    if line == "---":
-      if in_yaml:
-        end = idx
-        break
-      else:
-        in_yaml = True
-        start = idx
-        continue
-    if in_yaml:
-      yaml_contents.append(line)
-  
-  abstract = ""
-  title = ""
-  for idx, line in enumerate(yaml_contents):
-    if line.startswith("title:"):
-      title = line.replace("title:", "")
-    if line.startswith("abstract:"):
-      abstract = line.replace("abstract:", "")
+    # Remove any non-ascii characters and x0007
+    text = re.sub(r"\x07", r"", text)
+    text = re.sub(r"[^\x00-\x7f]", r"", text)
+    # remove single quotes
+    # text = re.sub(r"'",r'', text)
+    lines = text.split("\n")
+    yaml_contents = []
+    in_yaml = False
+    start, end = 0, 0
+    for idx, line in enumerate(lines):
+        if line == "---":
+            if in_yaml:
+                end = idx
+                break
+            else:
+                in_yaml = True
+                start = idx
+                continue
+        if in_yaml:
+            yaml_contents.append(line)
 
-  # trim the title and abstract
-  title = title.strip()
-  abstract = abstract.strip()
+    abstract = ""
+    title = ""
+    for idx, line in enumerate(yaml_contents):
+        if line.startswith("title:"):
+            title = line.replace("title:", "")
+        if line.startswith("abstract:"):
+            abstract = line.replace("abstract:", "")
 
-  # remove the beginning and ending quotes
-  title = title[1:-1]
-  abstract = abstract[1:-1]
-  return title, abstract, (start, end)
+    # trim the title and abstract
+    title = title.strip()
+    abstract = abstract.strip()
+
+    # remove the beginning and ending quotes
+    title = title[1:-1]
+    abstract = abstract[1:-1]
+    return title, abstract, (start, end)
+
 
 def reformatter(example):
-  title, abstract, (start, end) = get_abs_title(example["text"])
+    title, abstract, (start, end) = get_abs_title(example["text"])
 
-  # remove the yaml contents from the text
-  lines = example["text"].split("\n")
-  lines = lines[:start] + lines[end+1:]
-  # add the title and abstract
-  lines = [title, "", abstract] + lines
+    # remove the yaml contents from the text
+    lines = example["text"].split("\n")
+    lines = lines[:start] + lines[end + 1 :]
+    # add the title and abstract
+    lines = [title, "", abstract] + lines
 
-  example["text"] = "\n".join(lines)
-  return example
+    example["text"] = "\n".join(lines)
+    return example
 
 
 # Parse the arguments

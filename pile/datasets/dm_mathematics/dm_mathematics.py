@@ -1,14 +1,15 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, stream_jsonl_zst
 from pathlib import Path
+
+from ...file_utils import stream_jsonl, stream_jsonl_zst
+from ...templates import Dataset
 
 logger = logging.getLogger(__name__)
 
 
 class DMMathematics(Dataset):
     name = "DeepMind Mathematics Dataset"
-    
+
     license = "MIT License"
 
     urls = [""]
@@ -29,7 +30,9 @@ class DMMathematics(Dataset):
             yield path
 
     def examples(self):
-        return list(stream_jsonl(Path(__file__).parent / "dm_mathematics_examples.jsonl"))
+        return list(
+            stream_jsonl(Path(__file__).parent / "dm_mathematics_examples.jsonl")
+        )
 
     def size_on_disk(self):
         return -1

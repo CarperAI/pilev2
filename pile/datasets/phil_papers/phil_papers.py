@@ -1,14 +1,15 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, stream_jsonl_zst
 from pathlib import Path
+
+from ...file_utils import stream_jsonl, stream_jsonl_zst
+from ...templates import Dataset
 
 logger = logging.getLogger(__name__)
 
 
 class PhilPapers(Dataset):
     name = "PhilPapers"
-    
+
     license = "Open Access"
 
     urls = ["http://eaidata.bmk.sh/data/phil_papers.jsonl.zst"]

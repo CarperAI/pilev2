@@ -1,33 +1,34 @@
 import argparse
-import re
-import yaml
+from pathlib import Path
 
 from datasets import disable_caching, load_from_disk
-from pathlib import Path
+
 disable_caching()
 
-def get_body_text(text):
-  lines = text.split("\n")
-  body_contents = []
-  in_body = False
-  start, end = 0, 0
-  for idx, line in enumerate(lines):
-    if "==== Body" in line:
-      in_body = True
-      start = idx
-      continue
-    elif "==== " in line and in_body:
-      end = idx
-      break
-    if in_body:
-      body_contents.append(line)
 
-  return "\n".join(body_contents), (start, end)
+def get_body_text(text):
+    lines = text.split("\n")
+    body_contents = []
+    in_body = False
+    start, end = 0, 0
+    for idx, line in enumerate(lines):
+        if "==== Body" in line:
+            in_body = True
+            start = idx
+            continue
+        elif "==== " in line and in_body:
+            end = idx
+            break
+        if in_body:
+            body_contents.append(line)
+
+    return "\n".join(body_contents), (start, end)
+
 
 def reformatter(example):
-  text, (start, end) = get_body_text(example["text"])
-  example["text"] = text
-  return example
+    text, (start, end) = get_body_text(example["text"])
+    example["text"] = text
+    return example
 
 
 # Parse the arguments

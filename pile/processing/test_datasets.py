@@ -1,9 +1,8 @@
 import argparse
 import random
+from pathlib import Path
 
 from datasets import load_from_disk
-from pathlib import Path
-from pprint import pprint
 from tqdm.auto import tqdm
 
 # set the seed

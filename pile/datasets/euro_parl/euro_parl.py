@@ -1,17 +1,20 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, stream_jsonl_zst
 from pathlib import Path
+
+from ...file_utils import stream_jsonl, stream_jsonl_zst
+from ...templates import Dataset
 
 logger = logging.getLogger(__name__)
 
 
 class EnronEmails(Dataset):
     name = "EuroParl"
-    
+
     license = "Except where otherwise indicated, reproduction is authorised, provided that the source is acknowledged"
 
-    urls = ["https://the-eye.eu/public/AI/pile_preliminary_components/EuroParliamentProceedings_1996_2011.jsonl.zst"]
+    urls = [
+        "https://the-eye.eu/public/AI/pile_preliminary_components/EuroParliamentProceedings_1996_2011.jsonl.zst"
+    ]
 
     checksum = "6111400e7b7f75ce91fed1b5fc0a3630b8263217bd01ce75f7d8701f26ac0e98"
 

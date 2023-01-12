@@ -1,14 +1,15 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, stream_jsonl_zst
 from pathlib import Path
+
+from ...file_utils import stream_jsonl, stream_jsonl_zst
+from ...templates import Dataset
 
 logger = logging.getLogger(__name__)
 
 
 class EnronEmails(Dataset):
     name = "Enron Emails"
-    
+
     license = "Public domain"
 
     urls = ["http://eaidata.bmk.sh/data/enron_emails.jsonl.zst"]

@@ -1,13 +1,14 @@
-import os
-from typing import Union, List
-from pathlib import Path
-from best_download import download_file
-import logging
-import shutil
-import random
-from diskcache import Cache
-import pyfra as pf
 import hashlib
+import logging
+import os
+import random
+import shutil
+from pathlib import Path
+from typing import List, Union
+
+import pyfra as pf
+from best_download import download_file
+from diskcache import Cache
 from tqdm import tqdm
 
 logger = logging.getLogger(__name__)
@@ -134,7 +135,7 @@ def download(
         success = download_file(url, str(out_path), expected_checksum=checksum)
     except (SystemExit, KeyboardInterrupt):
         raise
-    except:
+    except Exception:
         print("here")
         import traceback
 
