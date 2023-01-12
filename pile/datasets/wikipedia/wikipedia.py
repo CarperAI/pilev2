@@ -1,14 +1,15 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, stream_jsonl_zst
 from pathlib import Path
+
+from ...file_utils import stream_jsonl, stream_jsonl_zst
+from ...templates import Dataset
 
 logger = logging.getLogger(__name__)
 
 
 class Wikipedia(Dataset):
     name = "Wikipedia"
-    
+
     license = ""
 
     urls = [""]

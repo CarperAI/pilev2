@@ -1,5 +1,5 @@
 import pickle
-import numpy as np
+
 path = "/fsx/shared/hf_data_pilev2_small_text/stats_dict.pkl"
 with open(path, "rb") as f:
     stats_dict = pickle.load(f)

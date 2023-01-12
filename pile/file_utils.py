@@ -1,9 +1,10 @@
-from typing import Union, List
-from pathlib import Path
-import logging
-import json
-import zstandard as zstd
 import io
+import json
+import logging
+from pathlib import Path
+from typing import List, Union
+
+import zstandard as zstd
 
 logger = logging.getLogger(__name__)
 

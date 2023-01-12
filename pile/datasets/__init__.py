@@ -2,7 +2,7 @@ from .dm_mathematics import DeepMindMathematics
 from .enron import EnronEmails
 from .euro_parl import EuroParl
 from .freelaw import FreeLaw
-from .grade_school_math import *
+from .grade_school_math import GradeSchoolMath, GradeSchoolMathNoCalc, NIHRePORTER
 from .philpapers import PhilPapers
 from .project_gutenberg import ProjectGutenberg
 from .wikipedia import Wikipedia

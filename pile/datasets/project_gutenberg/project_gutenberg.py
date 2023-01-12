@@ -1,14 +1,15 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, stream_jsonl_zst
 from pathlib import Path
+
+from ...file_utils import stream_jsonl, stream_jsonl_zst
+from ...templates import Dataset
 
 logger = logging.getLogger(__name__)
 
 
 class ProjectGutenberg(Dataset):
     name = "Project Gutenberg"
-    
+
     license = "Public domain"
 
     urls = [""]
@@ -29,7 +30,9 @@ class ProjectGutenberg(Dataset):
             yield path
 
     def examples(self):
-        return list(stream_jsonl(Path(__file__).parent / "project_gutenberg_examples.jsonl"))
+        return list(
+            stream_jsonl(Path(__file__).parent / "project_gutenberg_examples.jsonl")
+        )
 
     def size_on_disk(self):
         return -1

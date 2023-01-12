@@ -1,9 +1,10 @@
 import logging
-from ...templates import Dataset
-from ...file_utils import stream_jsonl, dump_jsonl
-from ...utils import download, mark_done, done_path, sha256sum
-from pathlib import Path
 import re
+from pathlib import Path
+
+from ...file_utils import dump_jsonl, stream_jsonl
+from ...templates import Dataset
+from ...utils import done_path, download, mark_done, sha256sum
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +61,7 @@ class _GradeSchoolMath(Dataset):
             question_answer_to_pile_format(qa) for qa in stream_jsonl(out_path)
         ]
         if self.remove_calculator_strings:
-            # calculator strings in this dataset are always inbetween << and >>
+            # calculator strings in this dataset are always in between << and >>
             # they are there so that the model can indicate when to outsource to a calculator,
             # but we might not always want this behavior
             # below removes them

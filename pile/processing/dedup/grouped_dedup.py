@@ -1,12 +1,11 @@
-from datasets import load_dataset, load_from_disk, Dataset, concatenate_datasets
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # author      : Chenghao Mou (mouchenghao@gmail.com)
 # created     : 10/4/22
 from __future__ import annotations
 
 import gc
 import hashlib
+import json
 import logging
 import multiprocessing as mp
 import os
@@ -18,18 +17,15 @@ import warnings
 from collections import defaultdict
 from itertools import tee
 from pathlib import Path
-from typing import Any
-from typing import Dict
-from typing import Iterable
-from typing import List
-from typing import Tuple
+from typing import Any, Dict, Iterable, List, Tuple
+
+from datasets import concatenate_datasets, load_from_disk
 
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore", category=FutureWarning)
     import datasets
     import numpy as np
     import typer
-    from datasets import load_dataset
     from scipy.integrate import quad as integrate
     from tqdm import tqdm
 
@@ -116,9 +112,13 @@ def embed_func(
     """
     hashvalues = np.ones(num_perm, dtype=np.uint64) * MAX_HASH
     tokens = {" ".join(t) for t in ngrams(NON_ALPHA.split(content), ngram_size)}
-    hv = np.array([sha1_hash32(token.encode("utf-8")) for token in tokens], dtype=np.uint64)  # noqa: E501
+    hv = np.array(
+        [sha1_hash32(token.encode("utf-8")) for token in tokens], dtype=np.uint64
+    )  # noqa: E501
     a, b = permutations
-    phv = np.bitwise_and(((hv * np.tile(a, (len(hv), 1)).T).T + b) % MERSENNE_PRIME, MAX_HASH)  # noqa: E501
+    phv = np.bitwise_and(
+        ((hv * np.tile(a, (len(hv), 1)).T).T + b) % MERSENNE_PRIME, MAX_HASH
+    )  # noqa: E501
     hashvalues = np.vstack([phv, hashvalues]).min(axis=0)
     Hs = [bytes(hashvalues[start:end].byteswap().data) for start, end in hashranges]
     return {"__signatures__": Hs, "__id__": idx}
@@ -200,10 +200,16 @@ class UnionFind:
         self.parent[px] = self.parent[py] = min(px, py)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # noqa:
+
     def run(
-        dataset_path: str = typer.Option("codeparrot/codeparrot-clean-valid", help="The dataset to use"),  # noqa: E501
-        grouped_dup_path: str = typer.Option("codeparrot/codeparrot-clean-valid-dup", help="The grouped duplicates to use"),  # noqa: E501
+        dataset_path: str = typer.Option(
+            "codeparrot/codeparrot-clean-valid", help="The dataset to use"
+        ),  # noqa: E501
+        grouped_dup_path: str = typer.Option(
+            "codeparrot/codeparrot-clean-valid-dup",
+            help="The grouped duplicates to use",
+        ),  # noqa: E501
         column: str = typer.Option("content", help="Dataset column"),
         ngram_size: int = typer.Option(5, help="The ngram size to use for MinHash"),
         num_perm: int = typer.Option(256, help="Number of permutations"),
@@ -217,7 +223,7 @@ if __name__ == "__main__":
 
         logging.basicConfig(level=logging.INFO)
 
-        with open (grouped_dup_path, "r") as f:
+        with open(grouped_dup_path, "r") as f:
             data = json.load(f)
         in_common = data.pop("common_group")
         for group_name in ["group_1", "group_2"]:
@@ -233,9 +239,9 @@ if __name__ == "__main__":
                 ds = load_from_disk(ds_path)
                 ds = ds.remove_columns(
                     [
-                        'check_char_repetition_criteria',
-                        'check_flagged_words_criteria',
-                        'check_stop_word_ratio_criteria'
+                        "check_char_repetition_criteria",
+                        "check_flagged_words_criteria",
+                        "check_stop_word_ratio_criteria",
                     ]
                 )
                 group.append(ds_path)
@@ -244,9 +250,9 @@ if __name__ == "__main__":
                 ds = load_from_disk(ds_path)
                 ds = ds.remove_columns(
                     [
-                        'check_char_repetition_criteria',
-                        'check_flagged_words_criteria',
-                        'check_stop_word_ratio_criteria'
+                        "check_char_repetition_criteria",
+                        "check_flagged_words_criteria",
+                        "check_stop_word_ratio_criteria",
                     ]
                 )
                 group.append(ds_path)
@@ -284,7 +290,9 @@ if __name__ == "__main__":
             time_measures["clustering"] = time.time()
             batch_size: int = 10000
             for i in tqdm(
-                range(0, len(embedded), batch_size), dynamic_ncols=True, desc="Iterating MinHashes..."  # noqa: E501
+                range(0, len(embedded), batch_size),
+                dynamic_ncols=True,
+                desc="Iterating MinHashes...",  # noqa: E501
             ):
                 batch = embedded[i : i + batch_size]
                 for key, Hs in zip(batch["__id__"], batch["__signatures__"]):
@@ -337,9 +345,15 @@ if __name__ == "__main__":
             logger.info(
                 f"{'Data Number (after)':<{PAD}}: {FINAL_DATA_SIZE} ({FINAL_DATA_SIZE / DATA_SIZE:.2%})"  # noqa: E501
             )
-            logger.info(f"{'Duplicate Number':<{PAD}}: {DUP_SIZE} ({DUP_SIZE / DATA_SIZE:.2%})")  # noqa: E501
-            logger.info(f"{'Total Time':<{PAD}}: {time.time() - start_time:.2f} seconds")
-            logger.info(f"{'Deduplicated Dataset':<{PAD}}: {os.path.join(output, group_name)}")
+            logger.info(
+                f"{'Duplicate Number':<{PAD}}: {DUP_SIZE} ({DUP_SIZE / DATA_SIZE:.2%})"
+            )  # noqa: E501
+            logger.info(
+                f"{'Total Time':<{PAD}}: {time.time() - start_time:.2f} seconds"
+            )
+            logger.info(
+                f"{'Deduplicated Dataset':<{PAD}}: {os.path.join(output, group_name)}"
+            )
             logger.info("🤗 Happy Deduplicating 🤗")
 
     mp.set_start_method("fork", force=True)
