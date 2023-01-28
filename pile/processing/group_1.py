@@ -40,6 +40,11 @@ parser.add_argument(
     default=10_000,
     help="The number of files per shard.",
 )
+parser.add_argument(
+    "--do_sharding",
+    action="store_true",
+    help="Whether to shard the data.",
+)
 
 parser.add_argument(
     "--save_format",
@@ -76,19 +81,26 @@ new_ds = new_ds.filter(
     batched=True,
     num_proc=32,
 )
-num_shards = len(new_ds) // args.num_files_per_shard
+num_shards = 0
+if args.do_sharding:
+    num_shards = len(new_ds) // args.num_files_per_shard
 if num_shards == 0:
     num_shards = 1
 ds_shards = [new_ds.shard(num_shards, i, contiguous=True) for i in range(num_shards)]
+# get file name from data_dir
+file_name = data_dir.name
+# remove extension
+file_name = file_name.split(".")[0]
 for i, shard in enumerate(ds_shards):
     if args.save_format == "parquet":
-        path = output_dir / f"{data_dir.name}_shard_{i}.parquet"
+        path = output_dir / f"{file_name}_shard_{i}.parquet" if i > 0 else output_dir / f"{file_name}.parquet"
         shard.to_parquet(path)
     elif args.save_format == "arrow":
-        shard.save_to_disk(output_dir / f"{data_dir.name}_shard_{i}")
+        path = output_dir / f"{file_name}_shard_{i}.arrow" if i > 0 else output_dir / f"{file_name}.arrow"
+        shard.save_to_disk(path)
     elif args.save_format == "JSONL":
         #TODO: Use lm_dataformat to save the data.
-        path = output_dir / f"{data_dir.name}_shard_{i}.jsonl.zst"
+        path = output_dir / f"{file_name}_shard_{i}.jsonl.zst" if i > 0 else output_dir / f"{file_name}.jsonl.zst"
         shard.to_json(
             path,
             lines=True,

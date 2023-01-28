@@ -131,5 +131,6 @@ dmypy.json
 .pyre/
 test_datasets/
 pile/processing/dedup/logs/*
+pile/processing/logs/*
 pile/processing/dedup/job_logs/*
 pile/processing/dedup/.temp_sbatch.slurm.swp
