@@ -2,7 +2,7 @@ import argparse
 import re
 import yaml
 
-from datasets import disable_caching, load_from_disk
+from datasets import disable_caching, load_from_disk, load_dataset
 from pathlib import Path
 disable_caching()
 
@@ -41,8 +41,16 @@ def get_abs_title(text):
   abstract = abstract.strip()
 
   # remove the beginning and ending quotes
-  title = title[1:-1]
-  abstract = abstract[1:-1]
+  if len(title) > 0:
+    if title[0] == "'":
+      title = title[1:]
+    if title[-1] == "'":
+      title = title[:-1]
+  if len(abstract) > 0:
+    if abstract[0] == "'":
+      abstract = abstract[1:]
+    if abstract[-1] == "'":
+      abstract = abstract[:-1]
   return title, abstract, (start, end)
 
 def reformatter(example):
@@ -72,18 +80,53 @@ parser.add_argument(
     required=True,
     help="The directory where the output should be stored.",
 )
+
+parser.add_argument(
+    "--num_files_per_shard",
+    type=int,
+    default=30_000,
+    help="The number of files per shard.",
+)
+parser.add_argument(
+    "--do_sharding",
+    action="store_true",
+    help="Whether to shard the data.",
+)
+
+parser.add_argument(
+    "--num_proc",
+    type=int,
+    default=8,
+    help="The number of processes to use.",
+)
 args = parser.parse_args()
 
 # create the output directory if it does not exist
 output_dir = Path(args.output_dir)
 output_dir.mkdir(parents=True, exist_ok=True)
 
+num_proc = args.num_proc
 data_dir = Path(args.data_dir)
-arxiv_ds = load_from_disk(data_dir)
-arxiv_ds = arxiv_ds.map(reformatter)
+# load from parquet
+arxiv_ds = load_dataset("parquet", data_dir=data_dir)
+arxiv_ds = arxiv_ds["train"]
+# arxiv_ds = load_from_disk(data_dir)
+arxiv_ds = arxiv_ds.map(reformatter, num_proc=num_proc)
 print(arxiv_ds[0]["text"])
-
-arxiv_ds.save_to_disk(output_dir)
+num_shards = 0
+if args.do_sharding:
+    num_shards = len(arxiv_ds) // args.num_files_per_shard
+if num_shards == 0:
+    num_shards = 1
+ds_shards = [arxiv_ds.shard(num_shards, i, contiguous=True) for i in range(num_shards)]
+# get file name from data_dir
+file_name = data_dir.name
+# remove extension
+file_name = file_name.split(".")[0]
+for i, shard in enumerate(ds_shards):
+      path = output_dir / f"{file_name}_shard_{i}.parquet" if i > 0 else output_dir / f"{file_name}.parquet"
+      shard.to_parquet(path)
+# arxiv_ds.save_to_disk(output_dir)
 
 # python fix_format_arxiv.py --data_dir /work/pilev2/pile/processing/fix_format/pile-v2-eda/local_dedup/arXiv_ver2 --output_dir /work/pilev2/pile/processing/fix_format/pile-v2-eda/reformated/arXiv_ver2
 # /fsx/home-nathan/work/pilev2/pile/processing/fix_format/pile-v2-eda/local_dedup/arXiv_ver2

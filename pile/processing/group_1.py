@@ -7,6 +7,7 @@ from pathlib import Path
 from squeakily.core import Pipeline
 from squeakily.clean import fix_utf8_encoding
 from squeakily.filter import check_compression_ratio
+import glob
 
 # Parse the arguments
 parser = argparse.ArgumentParser()
@@ -31,13 +32,13 @@ parser.add_argument(
 parser.add_argument(
     "--num_proc",
     type=int,
-    default=128,
+    default=64,
     help="The number of processes to use for the filtering.",
 )
 parser.add_argument(
     "--num_files_per_shard",
     type=int,
-    default=10_000,
+    default=20_000,
     help="The number of files per shard.",
 )
 parser.add_argument(
@@ -54,10 +55,14 @@ parser.add_argument(
 )
 
 args = parser.parse_args()
+num_proc = args.num_proc
 data_dir = Path(args.data_dir)
 output_dir = Path(args.output_dir)
 output_dir.mkdir(parents=True, exist_ok=True)
-ds = load_dataset("parquet", data_files = str(data_dir))
+# list all parquet files in data_dir
+data_files = [str(f) for f in list(data_dir.glob("*.parquet"))]
+ds = load_dataset("parquet", data_files = {"train" : data_files})
+ds = ds["train"]
 # add to ds the following columns:
 # - check_compression_ratio_criteria
 # - fix_utf8_encoding_criteria
@@ -71,15 +76,17 @@ datasources = [
     }
 ]
 pipeline = Pipeline(datasources)
-pipeline.run(dry_run=True, num_proc=96)
-new_ds = pipeline.datasources[0]["dataset"]['train']
+pipeline.run(dry_run=True, num_proc=num_proc)
+new_ds = pipeline.datasources[0]["dataset"]
+print(pipeline.datasources)
+print(f"New dataset: {new_ds}")
 start_size = len(new_ds)
 compression_ratios = new_ds["check_compression_ratio_criteria"]
 min_compression_ratio = np.quantile(compression_ratios, args.min_percentile)
 new_ds = new_ds.filter(
     lambda x: x["check_compression_ratio_criteria"] > min_compression_ratio,
     batched=True,
-    num_proc=32,
+    num_proc=num_proc,
 )
 num_shards = 0
 if args.do_sharding:
@@ -106,3 +113,16 @@ for i, shard in enumerate(ds_shards):
             lines=True,
             orient="records",
         )
+
+"""
+Files failed to load:
+arXiv:
+part-00000-21ba2398-4145-4378-ace5-7a83491981ad-c000.snappy.parquet
+Gutenberg:
+part-00000-ff22b108-a53d-480d-8cc7-8243484df5bf-c000.snappy.parquet
+part-00805-ff22b108-a53d-480d-8cc7-8243484df5bf-c000.snappy.parquet
+
+S2ORC redo.
+
+
+"""
