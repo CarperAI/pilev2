@@ -42,6 +42,8 @@ with warnings.catch_warnings():
     from scipy.integrate import quad as integrate
     from tqdm import tqdm
 
+from datasets import disable_caching
+disable_caching()
 
 SEED = 42
 NON_ALPHA = re.compile("[^A-Za-z_0-9]")
@@ -277,7 +279,7 @@ if __name__ == "__main__":
             desc="Fingerprinting...",
         )
 
-        print("Saving dataset...")
+        typer.echo("Saving dataset...")
         time_measures["minhash"] = time.time() - time_measures["minhash"]
         time_measures["save_dataset"] = time.time() 
         if output_format == "hf_arrow":
