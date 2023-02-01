@@ -1,0 +1,6 @@
+MASTER ADDR: cpu16-dy-r6i-4xlarge-4	GLOBAL RANK: 0	CPUS PER TASK: 16	MEM PER NODE: 129833
+starting org.apache.spark.deploy.master.Master, logging to /fsx/home-nathan/work/pilev2/pyspark/spark-3.3.1-bin-hadoop3/logs/spark-nathan-org.apache.spark.deploy.master.Master-1-cpu16-dy-r6i-4xlarge-4.out
+MEM IN GB: 129G
+starting org.apache.spark.deploy.worker.Worker, logging to /fsx/home-nathan/work/pilev2/pyspark/spark-3.3.1-bin-hadoop3/logs/spark-nathan-org.apache.spark.deploy.worker.Worker-1-cpu16-dy-r6i-4xlarge-4.out
+Hello from worker 0
+hi

@@ -25,17 +25,17 @@ parser.add_argument(
 args = parser.parse_args()
 data_dir = Path(args.data_dir)
 output_dir = Path(args.output_dir)
-
-benchmark_names = ["bigscience/P3", "codeparrot/apps", "wino_bias", "openai_humaneval", "mbpp", "ncoop57/mmmlu", "lambada"]
+# "bigscience/P3", 
+benchmark_names = ["codeparrot/apps", "wino_bias", "openai_humaneval", "mbpp", "ncoop57/mmmlu", "lambada"]
 # pdb.set_trace()
 bench_cleaner = BenchmarkCleaner(benchmark_names, output_dir / "benchmarks", threshold=0.85, num_perm=256)
-parquets = [str(par) for par in data_dir.glob("*.parquet")]
-try:
-    ds = load_dataset("parquet", data_files=parquets, split="train", num_proc=os.cpu_count())
-except Exception as e:
-    print(e)
-    print("Error")
-    exit(1)
+# parquets = [str(par) for par in data_dir.glob("*.parquet")]
+# try:
+#     ds = load_dataset("parquet", data_files=parquets, split="train", num_proc=os.cpu_count())
+# except Exception as e:
+#     print(e)
+#     print("Error")
+#     exit(1)
 
-ds = bench_cleaner.clean(ds, "text")
-ds.save_to_disk(output_dir / data_dir.name)
+# ds = bench_cleaner.clean(ds, "text")
+# ds.save_to_disk(output_dir / data_dir.name)

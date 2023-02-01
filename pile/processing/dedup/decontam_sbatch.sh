@@ -2,7 +2,7 @@
 
 # Set variables
 DATA_PATH=/fsx/shared/pilev2/group1_filtered
-OUTPUT_PATH=/fsx/shared/pilev2/decontam/
+OUTPUT_PATH=/fsx/shared/pilev2/decontam/other_benchmarks
 
 # Create a list all of the directories in $DATA_PATH
 datasets=$(ls $DATA_PATH)
