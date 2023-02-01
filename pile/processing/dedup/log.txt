@@ -1,0 +1,2367 @@
+bigscience/P3 adversarial_qa_dbert_answer_the_following_q validation
+Already processed
+bigscience/P3 adversarial_qa_dbert_based_on validation
+Already processed
+bigscience/P3 adversarial_qa_dbert_generate_question validation
+Already processed
+bigscience/P3 adversarial_qa_dbert_generate_question test
+Already processed
+bigscience/P3 adversarial_qa_dbert_question_context_answer validation
+Already processed
+bigscience/P3 adversarial_qa_dbert_tell_what_it_is validation
+Already processed
+bigscience/P3 adversarial_qa_dbidaf_answer_the_following_q validation
+Already processed
+bigscience/P3 adversarial_qa_dbidaf_based_on validation
+Already processed
+bigscience/P3 adversarial_qa_dbidaf_generate_question validation
+Already processed
+bigscience/P3 adversarial_qa_dbidaf_generate_question test
+Already processed
+bigscience/P3 adversarial_qa_dbidaf_question_context_answer validation
+Already processed
+bigscience/P3 adversarial_qa_dbidaf_tell_what_it_is validation
+Already processed
+bigscience/P3 adversarial_qa_droberta_answer_the_following_q validation
+Already processed
+bigscience/P3 adversarial_qa_droberta_based_on validation
+Already processed
+bigscience/P3 adversarial_qa_droberta_generate_question validation
+Already processed
+bigscience/P3 adversarial_qa_droberta_generate_question test
+Already processed
+bigscience/P3 adversarial_qa_droberta_question_context_answer validation
+Already processed
+bigscience/P3 adversarial_qa_droberta_tell_what_it_is validation
+Already processed
+bigscience/P3 ag_news_classify test
+Already processed
+bigscience/P3 ag_news_classify_question_first test
+Already processed
+bigscience/P3 ag_news_classify_with_choices test
+Already processed
+bigscience/P3 ag_news_classify_with_choices_question_first test
+Already processed
+bigscience/P3 ag_news_recommend test
+Already processed
+bigscience/P3 ag_news_which_section test
+Already processed
+bigscience/P3 ag_news_which_section_choices test
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_heres_a_problem validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_heres_a_problem test
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_i_am_hesitating validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_i_am_hesitating test
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_multiple_choice validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_multiple_choice test
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_pick_false_options validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_pick_false_options test
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_pick_the_most_correct_option validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_pick_the_most_correct_option test
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_qa_options validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Challenge_qa_options test
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_heres_a_problem validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_heres_a_problem test
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_i_am_hesitating validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_i_am_hesitating test
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_multiple_choice validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_multiple_choice test
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_pick_false_options validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_pick_false_options test
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_pick_the_most_correct_option validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_pick_the_most_correct_option test
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_qa_options validation
+Already processed
+bigscience/P3 ai2_arc_ARC_Easy_qa_options test
+Already processed
+bigscience/P3 amazon_polarity_Is_this_product_review_positive test
+Already processed
+bigscience/P3 amazon_polarity_Is_this_review test
+Already processed
+bigscience/P3 amazon_polarity_Is_this_review_negative test
+Already processed
+bigscience/P3 amazon_polarity_User_recommend_this_product test
+Already processed
+bigscience/P3 amazon_polarity_convey_negative_or_positive_sentiment test
+Already processed
+bigscience/P3 amazon_polarity_flattering_or_not test
+Already processed
+bigscience/P3 amazon_polarity_negative_or_positive_tone test
+Already processed
+bigscience/P3 amazon_polarity_user_satisfied test
+Already processed
+bigscience/P3 amazon_polarity_would_you_buy test
+Already processed
+bigscience/P3 anli_GPT_3_style_r1 validation
+Already processed
+bigscience/P3 anli_GPT_3_style_r1 test
+Already processed
+bigscience/P3 anli_GPT_3_style_r1_score_eval validation
+Already processed
+bigscience/P3 anli_GPT_3_style_r1_score_eval test
+Already processed
+bigscience/P3 anli_GPT_3_style_r2 validation
+Already processed
+bigscience/P3 anli_GPT_3_style_r2 test
+Already processed
+bigscience/P3 anli_GPT_3_style_r2_score_eval validation
+Already processed
+bigscience/P3 anli_GPT_3_style_r2_score_eval test
+Already processed
+bigscience/P3 anli_GPT_3_style_r3 validation
+Already processed
+bigscience/P3 anli_GPT_3_style_r3 test
+Already processed
+bigscience/P3 anli_GPT_3_style_r3_score_eval validation
+Already processed
+bigscience/P3 anli_GPT_3_style_r3_score_eval test
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r1 validation
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r1 test
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r1_score_eval validation
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r1_score_eval test
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r2 validation
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r2 test
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r2_score_eval validation
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r2_score_eval test
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r3 validation
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r3 test
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r3_score_eval validation
+Already processed
+bigscience/P3 anli_MNLI_crowdsource_r3_score_eval test
+Already processed
+bigscience/P3 anli_always_sometimes_never_r1 validation
+Already processed
+bigscience/P3 anli_always_sometimes_never_r1 test
+Already processed
+bigscience/P3 anli_always_sometimes_never_r1_score_eval validation
+Already processed
+bigscience/P3 anli_always_sometimes_never_r1_score_eval test
+Already processed
+bigscience/P3 anli_always_sometimes_never_r2 validation
+Already processed
+bigscience/P3 anli_always_sometimes_never_r2 test
+Already processed
+bigscience/P3 anli_always_sometimes_never_r2_score_eval validation
+Already processed
+bigscience/P3 anli_always_sometimes_never_r2_score_eval test
+Already processed
+bigscience/P3 anli_always_sometimes_never_r3 validation
+Already processed
+bigscience/P3 anli_always_sometimes_never_r3 test
+Already processed
+bigscience/P3 anli_always_sometimes_never_r3_score_eval validation
+Already processed
+bigscience/P3 anli_always_sometimes_never_r3_score_eval test
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r1 validation
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r1 test
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r1_score_eval validation
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r1_score_eval test
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r2 validation
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r2 test
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r2_score_eval validation
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r2_score_eval test
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r3 validation
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r3 test
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r3_score_eval validation
+Already processed
+bigscience/P3 anli_based_on_the_previous_passage_r3_score_eval test
+Already processed
+bigscience/P3 anli_can_we_infer_r1 validation
+Already processed
+bigscience/P3 anli_can_we_infer_r1 test
+Already processed
+bigscience/P3 anli_can_we_infer_r1_score_eval validation
+Already processed
+bigscience/P3 anli_can_we_infer_r1_score_eval test
+Already processed
+bigscience/P3 anli_can_we_infer_r2 validation
+Already processed
+bigscience/P3 anli_can_we_infer_r2 test
+Already processed
+bigscience/P3 anli_can_we_infer_r2_score_eval validation
+Already processed
+bigscience/P3 anli_can_we_infer_r2_score_eval test
+Already processed
+bigscience/P3 anli_can_we_infer_r3 validation
+Already processed
+bigscience/P3 anli_can_we_infer_r3 test
+Already processed
+bigscience/P3 anli_can_we_infer_r3_score_eval validation
+Already processed
+bigscience/P3 anli_can_we_infer_r3_score_eval test
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r1 validation
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r1 test
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r1_score_eval validation
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r1_score_eval test
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r2 validation
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r2 test
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r2_score_eval validation
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r2_score_eval test
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r3 validation
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r3 test
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r3_score_eval validation
+Already processed
+bigscience/P3 anli_claim_true_false_inconclusive_r3_score_eval test
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r1 validation
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r1 test
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r1_score_eval validation
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r1_score_eval test
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r2 validation
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r2 test
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r2_score_eval validation
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r2_score_eval test
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r3 validation
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r3 test
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r3_score_eval validation
+Already processed
+bigscience/P3 anli_consider_always_sometimes_never_r3_score_eval test
+Already processed
+bigscience/P3 anli_does_it_follow_that_r1 validation
+Already processed
+bigscience/P3 anli_does_it_follow_that_r1 test
+Already processed
+bigscience/P3 anli_does_it_follow_that_r1_score_eval validation
+Already processed
+bigscience/P3 anli_does_it_follow_that_r1_score_eval test
+Already processed
+bigscience/P3 anli_does_it_follow_that_r2 validation
+Already processed
+bigscience/P3 anli_does_it_follow_that_r2 test
+Already processed
+bigscience/P3 anli_does_it_follow_that_r2_score_eval validation
+Already processed
+bigscience/P3 anli_does_it_follow_that_r2_score_eval test
+Already processed
+bigscience/P3 anli_does_it_follow_that_r3 validation
+Already processed
+bigscience/P3 anli_does_it_follow_that_r3 test
+Already processed
+bigscience/P3 anli_does_it_follow_that_r3_score_eval validation
+Already processed
+bigscience/P3 anli_does_it_follow_that_r3_score_eval test
+Already processed
+bigscience/P3 anli_does_this_imply_r1 validation
+Already processed
+bigscience/P3 anli_does_this_imply_r1 test
+Already processed
+bigscience/P3 anli_does_this_imply_r1_score_eval validation
+Already processed
+bigscience/P3 anli_does_this_imply_r1_score_eval test
+Already processed
+bigscience/P3 anli_does_this_imply_r2 validation
+Already processed
+bigscience/P3 anli_does_this_imply_r2 test
+Already processed
+bigscience/P3 anli_does_this_imply_r2_score_eval validation
+Already processed
+bigscience/P3 anli_does_this_imply_r2_score_eval test
+Already processed
+bigscience/P3 anli_does_this_imply_r3 validation
+Already processed
+bigscience/P3 anli_does_this_imply_r3 test
+Already processed
+bigscience/P3 anli_does_this_imply_r3_score_eval validation
+Already processed
+bigscience/P3 anli_does_this_imply_r3_score_eval test
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r1 validation
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r1 test
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r1_score_eval validation
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r1_score_eval test
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r2 validation
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r2 test
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r2_score_eval validation
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r2_score_eval test
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r3 validation
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r3 test
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r3_score_eval validation
+Already processed
+bigscience/P3 anli_guaranteed_possible_impossible_r3_score_eval test
+Already processed
+bigscience/P3 anli_guaranteed_true_r1 validation
+Already processed
+bigscience/P3 anli_guaranteed_true_r1 test
+Already processed
+bigscience/P3 anli_guaranteed_true_r1_score_eval validation
+Already processed
+bigscience/P3 anli_guaranteed_true_r1_score_eval test
+Already processed
+bigscience/P3 anli_guaranteed_true_r2 validation
+Already processed
+bigscience/P3 anli_guaranteed_true_r2 test
+Already processed
+bigscience/P3 anli_guaranteed_true_r2_score_eval validation
+Already processed
+bigscience/P3 anli_guaranteed_true_r2_score_eval test
+Already processed
+bigscience/P3 anli_guaranteed_true_r3 validation
+Already processed
+bigscience/P3 anli_guaranteed_true_r3 test
+Already processed
+bigscience/P3 anli_guaranteed_true_r3_score_eval validation
+Already processed
+bigscience/P3 anli_guaranteed_true_r3_score_eval test
+Already processed
+bigscience/P3 anli_justified_in_saying_r1 validation
+Already processed
+bigscience/P3 anli_justified_in_saying_r1 test
+Already processed
+bigscience/P3 anli_justified_in_saying_r1_score_eval validation
+Already processed
+bigscience/P3 anli_justified_in_saying_r1_score_eval test
+Already processed
+bigscience/P3 anli_justified_in_saying_r2 validation
+Already processed
+bigscience/P3 anli_justified_in_saying_r2 test
+Already processed
+bigscience/P3 anli_justified_in_saying_r2_score_eval validation
+Already processed
+bigscience/P3 anli_justified_in_saying_r2_score_eval test
+Already processed
+bigscience/P3 anli_justified_in_saying_r3 validation
+Already processed
+bigscience/P3 anli_justified_in_saying_r3 test
+Already processed
+bigscience/P3 anli_justified_in_saying_r3_score_eval validation
+Already processed
+bigscience/P3 anli_justified_in_saying_r3_score_eval test
+Already processed
+bigscience/P3 anli_must_be_true_r1 validation
+Already processed
+bigscience/P3 anli_must_be_true_r1 test
+Already processed
+bigscience/P3 anli_must_be_true_r1_score_eval validation
+Already processed
+bigscience/P3 anli_must_be_true_r1_score_eval test
+Already processed
+bigscience/P3 anli_must_be_true_r2 validation
+Already processed
+bigscience/P3 anli_must_be_true_r2 test
+Already processed
+bigscience/P3 anli_must_be_true_r2_score_eval validation
+Already processed
+bigscience/P3 anli_must_be_true_r2_score_eval test
+Already processed
+bigscience/P3 anli_must_be_true_r3 validation
+Already processed
+bigscience/P3 anli_must_be_true_r3 test
+Already processed
+bigscience/P3 anli_must_be_true_r3_score_eval validation
+Already processed
+bigscience/P3 anli_must_be_true_r3_score_eval test
+Already processed
+bigscience/P3 anli_should_assume_r1 validation
+Already processed
+bigscience/P3 anli_should_assume_r1 test
+Already processed
+bigscience/P3 anli_should_assume_r1_score_eval validation
+Already processed
+bigscience/P3 anli_should_assume_r1_score_eval test
+Already processed
+bigscience/P3 anli_should_assume_r2 validation
+Already processed
+bigscience/P3 anli_should_assume_r2 test
+Already processed
+bigscience/P3 anli_should_assume_r2_score_eval validation
+Already processed
+bigscience/P3 anli_should_assume_r2_score_eval test
+Already processed
+bigscience/P3 anli_should_assume_r3 validation
+Already processed
+bigscience/P3 anli_should_assume_r3 test
+Already processed
+bigscience/P3 anli_should_assume_r3_score_eval validation
+Already processed
+bigscience/P3 anli_should_assume_r3_score_eval test
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r1 validation
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r1 test
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r1_score_eval validation
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r1_score_eval test
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r2 validation
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r2 test
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r2_score_eval validation
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r2_score_eval test
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r3 validation
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r3 test
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r3_score_eval validation
+Already processed
+bigscience/P3 anli_take_the_following_as_truth_r3_score_eval test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_2_or_3_sentences validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_2_or_3_sentences test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_generate_story validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_generate_story test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_news_card_view validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_news_card_view test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_news_stock validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_news_stock test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_news_summary validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_news_summary test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_spice_up_story validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_spice_up_story test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_sum_in_brief validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_sum_in_brief test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_tldr_summary validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_tldr_summary test
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_write_an_outline validation
+Already processed
+bigscience/P3 cnn_dailymail_3.0.0_write_an_outline test
+Already processed
+bigscience/P3 common_gen_Example_prompt validation
+Already processed
+bigscience/P3 common_gen_Example_prompt test
+Already processed
+bigscience/P3 common_gen_Given_concepts_type_1 validation
+Already processed
+bigscience/P3 common_gen_Given_concepts_type_1 test
+Already processed
+bigscience/P3 common_gen_Given_concepts_type_2 validation
+Already processed
+bigscience/P3 common_gen_Given_concepts_type_2 test
+Already processed
+bigscience/P3 common_gen_Put_together validation
+Already processed
+bigscience/P3 common_gen_Put_together test
+Already processed
+bigscience/P3 common_gen_choice_in_concept_centric_sentence_generation validation
+Already processed
+bigscience/P3 common_gen_choice_in_concept_centric_sentence_generation test
+Already processed
+bigscience/P3 common_gen_random_task_template_prompt validation
+Already processed
+bigscience/P3 common_gen_random_task_template_prompt test
+Already processed
+bigscience/P3 common_gen_sentence_to_concepts validation
+Already processed
+bigscience/P3 common_gen_sentence_to_concepts test
+Already processed
+bigscience/P3 common_gen_topic_to_sentence validation
+Already processed
+bigscience/P3 common_gen_topic_to_sentence test
+Already processed
+bigscience/P3 common_gen_topics_from_the_sentence validation
+Already processed
+bigscience/P3 common_gen_topics_from_the_sentence test
+Already processed
+bigscience/P3 cos_e_v1.11_aligned_with_common_sense validation
+Already processed
+bigscience/P3 cos_e_v1.11_description_question_option_id validation
+Already processed
+bigscience/P3 cos_e_v1.11_description_question_option_text validation
+Already processed
+bigscience/P3 cos_e_v1.11_explain_why_human validation
+Already processed
+bigscience/P3 cos_e_v1.11_generate_explanation_given_text validation
+Already processed
+bigscience/P3 cos_e_v1.11_i_think validation
+Already processed
+bigscience/P3 cos_e_v1.11_question_description_option_id validation
+Already processed
+bigscience/P3 cos_e_v1.11_question_description_option_text validation
+Already processed
+bigscience/P3 cos_e_v1.11_question_option_description_id validation
+Already processed
+bigscience/P3 cos_e_v1.11_question_option_description_text validation
+Already processed
+bigscience/P3 cos_e_v1.11_rationale validation
+Already processed
+bigscience/P3 cosmos_qa_context_answer_to_question validation
+Already processed
+bigscience/P3 cosmos_qa_context_answer_to_question test
+Already processed
+bigscience/P3 cosmos_qa_context_description_question_answer_id validation
+Already processed
+bigscience/P3 cosmos_qa_context_description_question_answer_id test
+Already processed
+bigscience/P3 cosmos_qa_context_description_question_answer_text validation
+Already processed
+bigscience/P3 cosmos_qa_context_description_question_answer_text test
+Already processed
+bigscience/P3 cosmos_qa_context_description_question_text validation
+Already processed
+bigscience/P3 cosmos_qa_context_description_question_text test
+Already processed
+bigscience/P3 cosmos_qa_context_question_description_answer_id validation
+Already processed
+bigscience/P3 cosmos_qa_context_question_description_answer_id test
+Already processed
+bigscience/P3 cosmos_qa_context_question_description_answer_text validation
+Already processed
+bigscience/P3 cosmos_qa_context_question_description_answer_text test
+Already processed
+bigscience/P3 cosmos_qa_context_question_description_text validation
+Already processed
+bigscience/P3 cosmos_qa_context_question_description_text test
+Already processed
+bigscience/P3 cosmos_qa_description_context_question_answer_id validation
+Already processed
+bigscience/P3 cosmos_qa_description_context_question_answer_id test
+Already processed
+bigscience/P3 cosmos_qa_description_context_question_answer_text validation
+Already processed
+bigscience/P3 cosmos_qa_description_context_question_answer_text test
+Already processed
+bigscience/P3 cosmos_qa_description_context_question_text validation
+Already processed
+bigscience/P3 cosmos_qa_description_context_question_text test
+Already processed
+bigscience/P3 cosmos_qa_no_prompt_id validation
+Already processed
+bigscience/P3 cosmos_qa_no_prompt_id test
+Already processed
+bigscience/P3 cosmos_qa_no_prompt_text validation
+Already processed
+bigscience/P3 cosmos_qa_no_prompt_text test
+Already processed
+bigscience/P3 cosmos_qa_only_question_answer validation
+Already processed
+bigscience/P3 cosmos_qa_only_question_answer test
+Already processed
+bigscience/P3 dbpedia_14_given_a_choice_of_categories_ test
+Already processed
+bigscience/P3 dbpedia_14_given_a_list_of_category_what_does_the_title_belong_to test
+Already processed
+bigscience/P3 dbpedia_14_given_list_what_category_does_the_paragraph_belong_to test
+Already processed
+bigscience/P3 dbpedia_14_pick_one_category_for_the_following_text test
+Already processed
+bigscience/P3 dream_answer_to_dialogue validation
+Already processed
+bigscience/P3 dream_answer_to_dialogue test
+Already processed
+bigscience/P3 dream_baseline validation
+Already processed
+bigscience/P3 dream_baseline test
+Already processed
+bigscience/P3 dream_generate_first_utterance validation
+Already processed
+bigscience/P3 dream_generate_first_utterance test
+Already processed
+bigscience/P3 dream_generate_last_utterance validation
+Already processed
+bigscience/P3 dream_generate_last_utterance test
+Already processed
+bigscience/P3 dream_read_the_following_conversation_and_answer_the_question validation
+Already processed
+bigscience/P3 dream_read_the_following_conversation_and_answer_the_question test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_answer_question validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_answer_question test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_build_story_around_qa validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_build_story_around_qa test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_decide_worth_it validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_decide_worth_it test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_extract_answer validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_extract_answer test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_generate_question validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_generate_question test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_generate_question_by_answer validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_generate_question_by_answer test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_movie_director validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_movie_director test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_question_answering validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_question_answering test
+Already processed
+bigscience/P3 duorc_ParaphraseRC_title_generation validation
+Already processed
+bigscience/P3 duorc_ParaphraseRC_title_generation test
+Already processed
+bigscience/P3 duorc_SelfRC_answer_question validation
+Already processed
+bigscience/P3 duorc_SelfRC_answer_question test
+Already processed
+bigscience/P3 duorc_SelfRC_build_story_around_qa validation
+Already processed
+bigscience/P3 duorc_SelfRC_build_story_around_qa test
+Already processed
+bigscience/P3 duorc_SelfRC_decide_worth_it validation
+Already processed
+bigscience/P3 duorc_SelfRC_decide_worth_it test
+Already processed
+bigscience/P3 duorc_SelfRC_extract_answer validation
+Already processed
+bigscience/P3 duorc_SelfRC_extract_answer test
+Already processed
+bigscience/P3 duorc_SelfRC_generate_question validation
+Already processed
+bigscience/P3 duorc_SelfRC_generate_question test
+Already processed
+bigscience/P3 duorc_SelfRC_generate_question_by_answer validation
+Already processed
+bigscience/P3 duorc_SelfRC_generate_question_by_answer test
+Already processed
+bigscience/P3 duorc_SelfRC_movie_director validation
+Already processed
+bigscience/P3 duorc_SelfRC_movie_director test
+Already processed
+bigscience/P3 duorc_SelfRC_question_answering validation
+Already processed
+bigscience/P3 duorc_SelfRC_question_answering test
+Already processed
+bigscience/P3 duorc_SelfRC_title_generation validation
+Already processed
+bigscience/P3 duorc_SelfRC_title_generation test
+Already processed
+bigscience/P3 gigaword_TLDR validation
+Already processed
+bigscience/P3 gigaword_TLDR test
+Already processed
+bigscience/P3 gigaword_first_sentence_title validation
+Already processed
+bigscience/P3 gigaword_first_sentence_title test
+Already processed
+bigscience/P3 gigaword_generate_summary_for_this validation
+Already processed
+bigscience/P3 gigaword_generate_summary_for_this test
+Already processed
+bigscience/P3 gigaword_in_a_nutshell validation
+Already processed
+bigscience/P3 gigaword_in_a_nutshell test
+Already processed
+bigscience/P3 gigaword_make_a_title validation
+Already processed
+bigscience/P3 gigaword_make_a_title test
+Already processed
+bigscience/P3 gigaword_reverse_writing validation
+Already processed
+bigscience/P3 gigaword_reverse_writing test
+Already processed
+bigscience/P3 gigaword_write_a_title_for_this_sentence validation
+Already processed
+bigscience/P3 gigaword_write_a_title_for_this_sentence test
+Already processed
+bigscience/P3 gigaword_write_an_article validation
+Already processed
+bigscience/P3 gigaword_write_an_article test
+Already processed
+bigscience/P3 gigaword_write_its_sentence validation
+Already processed
+bigscience/P3 gigaword_write_its_sentence test
+Already processed
+bigscience/P3 glue_mrpc_equivalent validation
+Already processed
+bigscience/P3 glue_mrpc_equivalent test
+Already processed
+bigscience/P3 glue_mrpc_generate_paraphrase validation
+Already processed
+bigscience/P3 glue_mrpc_generate_paraphrase test
+Already processed
+bigscience/P3 glue_mrpc_generate_sentence validation
+Already processed
+bigscience/P3 glue_mrpc_generate_sentence test
+Already processed
+bigscience/P3 glue_mrpc_paraphrase validation
+Already processed
+bigscience/P3 glue_mrpc_paraphrase test
+Already processed
+bigscience/P3 glue_mrpc_replace validation
+Already processed
+bigscience/P3 glue_mrpc_replace test
+Already processed
+bigscience/P3 glue_mrpc_same_thing validation
+Already processed
+bigscience/P3 glue_mrpc_same_thing test
+Already processed
+bigscience/P3 glue_mrpc_want_to_know validation
+Already processed
+bigscience/P3 glue_mrpc_want_to_know test
+Already processed
+bigscience/P3 glue_qqp_answer validation
+Already processed
+bigscience/P3 glue_qqp_answer test
+Already processed
+bigscience/P3 glue_qqp_duplicate validation
+Already processed
+bigscience/P3 glue_qqp_duplicate test
+Already processed
+bigscience/P3 glue_qqp_duplicate_or_not validation
+Already processed
+bigscience/P3 glue_qqp_duplicate_or_not test
+Already processed
+bigscience/P3 glue_qqp_meaning validation
+Already processed
+bigscience/P3 glue_qqp_meaning test
+Already processed
+bigscience/P3 glue_qqp_quora validation
+Already processed
+bigscience/P3 glue_qqp_quora test
+Already processed
+bigscience/P3 glue_qqp_same_thing validation
+Already processed
+bigscience/P3 glue_qqp_same_thing test
+Already processed
+bigscience/P3 hellaswag_Appropriate_continuation_Yes_or_No validation
+Already processed
+bigscience/P3 hellaswag_Appropriate_continuation_Yes_or_No test
+Already processed
+bigscience/P3 hellaswag_Open_ended_completion validation
+Already processed
+bigscience/P3 hellaswag_Open_ended_completion test
+Already processed
+bigscience/P3 hellaswag_Open_ended_start validation
+Already processed
+bigscience/P3 hellaswag_Open_ended_start test
+Already processed
+bigscience/P3 hellaswag_Predict_ending_with_hint validation
+Already processed
+bigscience/P3 hellaswag_Predict_ending_with_hint test
+Already processed
+bigscience/P3 hellaswag_Predict_ending_with_hint_score_eval validation
+Already processed
+bigscience/P3 hellaswag_Predict_ending_with_hint_score_eval test
+Already processed
+bigscience/P3 hellaswag_Randomized_prompts_template validation
+Already processed
+bigscience/P3 hellaswag_Randomized_prompts_template test
+Already processed
+bigscience/P3 hellaswag_Randomized_prompts_template_score_eval validation
+Already processed
+bigscience/P3 hellaswag_Randomized_prompts_template_score_eval test
+Already processed
+bigscience/P3 hellaswag_Reversed_appropriate_continuation_Yes_or_No validation
+Already processed
+bigscience/P3 hellaswag_Reversed_appropriate_continuation_Yes_or_No test
+Already processed
+bigscience/P3 hellaswag_Topic_of_the_context validation
+Already processed
+bigscience/P3 hellaswag_Topic_of_the_context test
+Already processed
+bigscience/P3 hellaswag_Topic_without_the_ending_answer validation
+Already processed
+bigscience/P3 hellaswag_Topic_without_the_ending_answer test
+Already processed
+bigscience/P3 hellaswag_complete_first_then validation
+Already processed
+bigscience/P3 hellaswag_complete_first_then test
+Already processed
+bigscience/P3 hellaswag_complete_first_then_score_eval validation
+Already processed
+bigscience/P3 hellaswag_complete_first_then_score_eval test
+Already processed
+bigscience/P3 hellaswag_how_ends validation
+Already processed
+bigscience/P3 hellaswag_how_ends test
+Already processed
+bigscience/P3 hellaswag_if_begins_how_continues validation
+Already processed
+bigscience/P3 hellaswag_if_begins_how_continues test
+Already processed
+bigscience/P3 hellaswag_if_begins_how_continues_score_eval validation
+Already processed
+bigscience/P3 hellaswag_if_begins_how_continues_score_eval test
+Already processed
+bigscience/P3 imdb_Movie_Expressed_Sentiment test
+Processing
+bigscience/P3 imdb_Movie_Expressed_Sentiment unsupervised
+Processing
+bigscience/P3 imdb_Movie_Expressed_Sentiment_2 test
+Processing
+bigscience/P3 imdb_Movie_Expressed_Sentiment_2 unsupervised
+Processing
+bigscience/P3 imdb_Negation_template_for_positive_and_negative test
+Processing
+bigscience/P3 imdb_Negation_template_for_positive_and_negative unsupervised
+Processing
+bigscience/P3 imdb_Reviewer_Enjoyment test
+Processing
+bigscience/P3 imdb_Reviewer_Enjoyment unsupervised
+Processing
+bigscience/P3 imdb_Reviewer_Enjoyment_Yes_No test
+Processing
+bigscience/P3 imdb_Reviewer_Enjoyment_Yes_No unsupervised
+Processing
+bigscience/P3 imdb_Reviewer_Expressed_Sentiment test
+Processing
+bigscience/P3 imdb_Reviewer_Expressed_Sentiment unsupervised
+Processing
+bigscience/P3 imdb_Reviewer_Opinion_bad_good_choices test
+Processing
+bigscience/P3 imdb_Reviewer_Opinion_bad_good_choices unsupervised
+Processing
+bigscience/P3 imdb_Reviewer_Sentiment_Feeling test
+Processing
+bigscience/P3 imdb_Reviewer_Sentiment_Feeling unsupervised
+Processing
+bigscience/P3 imdb_Sentiment_with_choices_ test
+Processing
+bigscience/P3 imdb_Sentiment_with_choices_ unsupervised
+Processing
+bigscience/P3 imdb_Text_Expressed_Sentiment test
+Processing
+bigscience/P3 imdb_Text_Expressed_Sentiment unsupervised
+Processing
+bigscience/P3 imdb_Writer_Expressed_Sentiment test
+Processing
+bigscience/P3 imdb_Writer_Expressed_Sentiment unsupervised
+Processing
+bigscience/P3 kilt_tasks_hotpotqa_combining_facts validation
+Processing
+bigscience/P3 kilt_tasks_hotpotqa_complex_question validation
+Processing
+bigscience/P3 kilt_tasks_hotpotqa_final_exam validation
+Processing
+bigscience/P3 kilt_tasks_hotpotqa_formulate validation
+Processing
+bigscience/P3 kilt_tasks_hotpotqa_straighforward_qa validation
+Processing
+bigscience/P3 multi_news_distill validation
+Processing
+bigscience/P3 multi_news_distill test
+Processing
+bigscience/P3 multi_news_expand_reverse_task_ validation
+Processing
+bigscience/P3 multi_news_expand_reverse_task_ test
+Processing
+bigscience/P3 multi_news_summarize validation
+Processing
+bigscience/P3 multi_news_summarize test
+Processing
+bigscience/P3 multi_news_summary_scenario validation
+Processing
+bigscience/P3 multi_news_summary_scenario test
+Processing
+bigscience/P3 multi_news_synthesize validation
+Processing
+bigscience/P3 multi_news_synthesize test
+Processing
+bigscience/P3 multi_news_what_are_the_key_points validation
+Processing
+bigscience/P3 multi_news_what_are_the_key_points test
+Processing
+bigscience/P3 openbookqa_main_choices validation
+Processing
+bigscience/P3 openbookqa_main_choices test
+Processing
+bigscience/P3 openbookqa_main_choose_an_answer_with_options validation
+Processing
+bigscience/P3 openbookqa_main_choose_an_answer_with_options test
+Processing
+bigscience/P3 openbookqa_main_only_options validation
+Processing
+bigscience/P3 openbookqa_main_only_options test
+Processing
+bigscience/P3 openbookqa_main_pick_answer_with_options validation
+Processing
+bigscience/P3 openbookqa_main_pick_answer_with_options test
+Processing
+bigscience/P3 openbookqa_main_pick_using_id validation
+Processing
+bigscience/P3 openbookqa_main_pick_using_id test
+Processing
+bigscience/P3 openbookqa_main_which_correct validation
+Processing
+bigscience/P3 openbookqa_main_which_correct test
+Processing
+bigscience/P3 openbookqa_main_which_correct_inverse validation
+Processing
+bigscience/P3 openbookqa_main_which_correct_inverse test
+Processing
+bigscience/P3 paws_labeled_final_Concatenation validation
+Processing
+bigscience/P3 paws_labeled_final_Concatenation test
+Processing
+bigscience/P3 paws_labeled_final_Concatenation_no_label validation
+Processing
+bigscience/P3 paws_labeled_final_Concatenation_no_label test
+Processing
+bigscience/P3 paws_labeled_final_Meaning validation
+Processing
+bigscience/P3 paws_labeled_final_Meaning test
+Processing
+bigscience/P3 paws_labeled_final_Meaning_no_label validation
+Processing
+bigscience/P3 paws_labeled_final_Meaning_no_label test
+Processing
+bigscience/P3 paws_labeled_final_PAWS_ANLI_GPT3 validation
+Processing
+bigscience/P3 paws_labeled_final_PAWS_ANLI_GPT3 test
+Processing
+bigscience/P3 paws_labeled_final_PAWS_ANLI_GPT3_no_label validation
+Processing
+bigscience/P3 paws_labeled_final_PAWS_ANLI_GPT3_no_label test
+Processing
+bigscience/P3 paws_labeled_final_Rewrite validation
+Processing
+bigscience/P3 paws_labeled_final_Rewrite test
+Processing
+bigscience/P3 paws_labeled_final_Rewrite_no_label validation
+Processing
+bigscience/P3 paws_labeled_final_Rewrite_no_label test
+Processing
+bigscience/P3 paws_labeled_final_context_question validation
+Processing
+bigscience/P3 paws_labeled_final_context_question test
+Processing
+bigscience/P3 paws_labeled_final_context_question_no_label validation
+Processing
+bigscience/P3 paws_labeled_final_context_question_no_label test
+Processing
+bigscience/P3 paws_labeled_final_paraphrase_task validation
+Processing
+bigscience/P3 paws_labeled_final_paraphrase_task test
+Processing
+bigscience/P3 paws_labeled_final_task_description_no_label validation
+Processing
+bigscience/P3 paws_labeled_final_task_description_no_label test
+Processing
+bigscience/P3 piqa_Correct_the_solution validation
+Processing
+bigscience/P3 piqa_Correct_the_solution test
+Processing
+bigscience/P3 piqa_Correct_the_solution_if_false_from_sol_1 validation
+Processing
+bigscience/P3 piqa_Correct_the_solution_if_false_from_sol_1 test
+Processing
+bigscience/P3 piqa_Correct_the_solution_if_false_from_sol_2 validation
+Processing
+bigscience/P3 piqa_Correct_the_solution_if_false_from_sol_2 test
+Processing
+bigscience/P3 piqa_Does_this_solution_make_sense_sol1 validation
+Processing
+bigscience/P3 piqa_Does_this_solution_make_sense_sol1 test
+Processing
+bigscience/P3 piqa_Does_this_solution_make_sense_sol2 validation
+Processing
+bigscience/P3 piqa_Does_this_solution_make_sense_sol2 test
+Processing
+bigscience/P3 piqa_choose_the_most_appropriate_solution validation
+Processing
+bigscience/P3 piqa_choose_the_most_appropriate_solution test
+Processing
+bigscience/P3 piqa_finish_sentence_with_correct_choice validation
+Processing
+bigscience/P3 piqa_finish_sentence_with_correct_choice test
+Processing
+bigscience/P3 piqa_no_prompt_needed validation
+Processing
+bigscience/P3 piqa_no_prompt_needed test
+Processing
+bigscience/P3 piqa_pick_correct_choice_index validation
+Processing
+bigscience/P3 piqa_pick_correct_choice_index test
+Processing
+bigscience/P3 piqa_pick_correct_choice_with_choice_given_before_goal validation
+Processing
+bigscience/P3 piqa_pick_correct_choice_with_choice_given_before_goal test
+Processing
+bigscience/P3 piqa_what_is_the_correct_ending validation
+Processing
+bigscience/P3 piqa_what_is_the_correct_ending test
+Processing
+bigscience/P3 qasc_is_correct_1 validation
+Processing
+bigscience/P3 qasc_is_correct_1 test
+Processing
+bigscience/P3 qasc_is_correct_2 validation
+Processing
+bigscience/P3 qasc_is_correct_2 test
+Processing
+bigscience/P3 qasc_qa_with_combined_facts_1 validation
+Processing
+bigscience/P3 qasc_qa_with_combined_facts_1 test
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_1 validation
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_1 test
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_2 validation
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_2 test
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_3 validation
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_3 test
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_4 validation
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_4 test
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_5 validation
+Processing
+bigscience/P3 qasc_qa_with_separated_facts_5 test
+Processing
+bigscience/P3 quail_context_description_question_answer_id validation
+Processing
+bigscience/P3 quail_context_description_question_answer_id challenge
+Processing
+bigscience/P3 quail_context_description_question_answer_text validation
+Processing
+bigscience/P3 quail_context_description_question_answer_text challenge
+Processing
+bigscience/P3 quail_context_description_question_text validation
+Processing
+bigscience/P3 quail_context_description_question_text challenge
+Processing
+bigscience/P3 quail_context_question_answer_description_id validation
+Processing
+bigscience/P3 quail_context_question_answer_description_id challenge
+Processing
+bigscience/P3 quail_context_question_answer_description_text validation
+Processing
+bigscience/P3 quail_context_question_answer_description_text challenge
+Processing
+bigscience/P3 quail_context_question_description_answer_id validation
+Processing
+bigscience/P3 quail_context_question_description_answer_id challenge
+Processing
+bigscience/P3 quail_context_question_description_answer_text validation
+Processing
+bigscience/P3 quail_context_question_description_answer_text challenge
+Processing
+bigscience/P3 quail_context_question_description_text validation
+Processing
+bigscience/P3 quail_context_question_description_text challenge
+Processing
+bigscience/P3 quail_description_context_question_answer_id validation
+Processing
+bigscience/P3 quail_description_context_question_answer_id challenge
+Processing
+bigscience/P3 quail_description_context_question_answer_text validation
+Processing
+bigscience/P3 quail_description_context_question_answer_text challenge
+Processing
+bigscience/P3 quail_description_context_question_text validation
+Processing
+bigscience/P3 quail_description_context_question_text challenge
+Processing
+bigscience/P3 quail_no_prompt_id validation
+Processing
+bigscience/P3 quail_no_prompt_id challenge
+Processing
+bigscience/P3 quail_no_prompt_text validation
+Processing
+bigscience/P3 quail_no_prompt_text challenge
+Processing
+bigscience/P3 quarel_choose_between validation
+Processing
+bigscience/P3 quarel_choose_between test
+Processing
+bigscience/P3 quarel_do_not_use validation
+Processing
+bigscience/P3 quarel_do_not_use test
+Processing
+bigscience/P3 quarel_heres_a_story validation
+Processing
+bigscience/P3 quarel_heres_a_story test
+Processing
+bigscience/P3 quarel_logic_test validation
+Processing
+bigscience/P3 quarel_logic_test test
+Processing
+bigscience/P3 quarel_testing_students validation
+Processing
+bigscience/P3 quarel_testing_students test
+Processing
+bigscience/P3 quartz_answer_question_based_on validation
+Processing
+bigscience/P3 quartz_answer_question_based_on test
+Processing
+bigscience/P3 quartz_answer_question_below validation
+Processing
+bigscience/P3 quartz_answer_question_below test
+Processing
+bigscience/P3 quartz_given_the_fact_answer_the_q validation
+Processing
+bigscience/P3 quartz_given_the_fact_answer_the_q test
+Processing
+bigscience/P3 quartz_having_read_above_passage validation
+Processing
+bigscience/P3 quartz_having_read_above_passage test
+Processing
+bigscience/P3 quartz_paragraph_question_plain_concat validation
+Processing
+bigscience/P3 quartz_paragraph_question_plain_concat test
+Processing
+bigscience/P3 quartz_read_passage_below_choose validation
+Processing
+bigscience/P3 quartz_read_passage_below_choose test
+Processing
+bigscience/P3 quartz_use_info_from_paragraph_question validation
+Processing
+bigscience/P3 quartz_use_info_from_paragraph_question test
+Processing
+bigscience/P3 quartz_use_info_from_question_paragraph validation
+Processing
+bigscience/P3 quartz_use_info_from_question_paragraph test
+Processing
+bigscience/P3 quoref_Answer_Friend_Question validation
+Processing
+bigscience/P3 quoref_Answer_Question_Given_Context validation
+Processing
+bigscience/P3 quoref_Answer_Test validation
+Processing
+bigscience/P3 quoref_Context_Contains_Answer validation
+Processing
+bigscience/P3 quoref_Find_Answer validation
+Processing
+bigscience/P3 quoref_Found_Context_Online validation
+Processing
+bigscience/P3 quoref_Given_Context_Answer_Question validation
+Processing
+bigscience/P3 quoref_Guess_Answer validation
+Processing
+bigscience/P3 quoref_Guess_Title_For_Context validation
+Processing
+bigscience/P3 quoref_Read_And_Extract_ validation
+Processing
+bigscience/P3 quoref_What_Is_The_Answer validation
+Processing
+bigscience/P3 race_high_Is_this_the_right_answer validation
+Processing
+bigscience/P3 race_high_Is_this_the_right_answer test
+Processing
+bigscience/P3 race_high_Read_the_article_and_answer_the_question_no_option_ validation
+Processing
+bigscience/P3 race_high_Read_the_article_and_answer_the_question_no_option_ test
+Processing
+bigscience/P3 race_high_Select_the_best_answer validation
+Processing
+bigscience/P3 race_high_Select_the_best_answer test
+Processing
+bigscience/P3 race_high_Select_the_best_answer_generate_span_ validation
+Processing
+bigscience/P3 race_high_Select_the_best_answer_generate_span_ test
+Processing
+bigscience/P3 race_high_Select_the_best_answer_no_instructions_ validation
+Processing
+bigscience/P3 race_high_Select_the_best_answer_no_instructions_ test
+Processing
+bigscience/P3 race_high_Taking_a_test validation
+Processing
+bigscience/P3 race_high_Taking_a_test test
+Processing
+bigscience/P3 race_high_Write_a_multi_choice_question_for_the_following_article validation
+Processing
+bigscience/P3 race_high_Write_a_multi_choice_question_for_the_following_article test
+Processing
+bigscience/P3 race_high_Write_a_multi_choice_question_options_given_ validation
+Processing
+bigscience/P3 race_high_Write_a_multi_choice_question_options_given_ test
+Processing
+bigscience/P3 race_middle_Is_this_the_right_answer validation
+Processing
+bigscience/P3 race_middle_Is_this_the_right_answer test
+Processing
+bigscience/P3 race_middle_Read_the_article_and_answer_the_question_no_option_ validation
+Processing
+bigscience/P3 race_middle_Read_the_article_and_answer_the_question_no_option_ test
+Processing
+bigscience/P3 race_middle_Select_the_best_answer validation
+Processing
+bigscience/P3 race_middle_Select_the_best_answer test
+Processing
+bigscience/P3 race_middle_Select_the_best_answer_generate_span_ validation
+Processing
+bigscience/P3 race_middle_Select_the_best_answer_generate_span_ test
+Processing
+bigscience/P3 race_middle_Select_the_best_answer_no_instructions_ validation
+Processing
+bigscience/P3 race_middle_Select_the_best_answer_no_instructions_ test
+Processing
+bigscience/P3 race_middle_Taking_a_test validation
+Processing
+bigscience/P3 race_middle_Taking_a_test test
+Processing
+bigscience/P3 race_middle_Write_a_multi_choice_question_for_the_following_article validation
+Processing
+bigscience/P3 race_middle_Write_a_multi_choice_question_for_the_following_article test
+Processing
+bigscience/P3 race_middle_Write_a_multi_choice_question_options_given_ validation
+Processing
+bigscience/P3 race_middle_Write_a_multi_choice_question_options_given_ test
+Processing
+bigscience/P3 ropes_background_new_situation_answer validation
+Processing
+bigscience/P3 ropes_background_situation_middle validation
+Processing
+bigscience/P3 ropes_given_background_situation validation
+Processing
+bigscience/P3 ropes_new_situation_background_answer validation
+Processing
+bigscience/P3 ropes_plain_background_situation validation
+Processing
+bigscience/P3 ropes_plain_bottom_hint validation
+Processing
+bigscience/P3 ropes_plain_no_background validation
+Processing
+bigscience/P3 ropes_prompt_beginning validation
+Processing
+bigscience/P3 ropes_prompt_bottom_hint_beginning validation
+Processing
+bigscience/P3 ropes_prompt_bottom_no_hint validation
+Processing
+bigscience/P3 ropes_prompt_mix validation
+Processing
+bigscience/P3 ropes_read_background_situation validation
+Processing
+bigscience/P3 rotten_tomatoes_Movie_Expressed_Sentiment validation
+Processing
+bigscience/P3 rotten_tomatoes_Movie_Expressed_Sentiment test
+Processing
+bigscience/P3 rotten_tomatoes_Movie_Expressed_Sentiment_2 validation
+Processing
+bigscience/P3 rotten_tomatoes_Movie_Expressed_Sentiment_2 test
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Enjoyment validation
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Enjoyment test
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Enjoyment_Yes_No validation
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Enjoyment_Yes_No test
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Expressed_Sentiment validation
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Expressed_Sentiment test
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Opinion_bad_good_choices validation
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Opinion_bad_good_choices test
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Sentiment_Feeling validation
+Processing
+bigscience/P3 rotten_tomatoes_Reviewer_Sentiment_Feeling test
+Processing
+bigscience/P3 rotten_tomatoes_Sentiment_with_choices_ validation
+Processing
+bigscience/P3 rotten_tomatoes_Sentiment_with_choices_ test
+Processing
+bigscience/P3 rotten_tomatoes_Text_Expressed_Sentiment validation
+Processing
+bigscience/P3 rotten_tomatoes_Text_Expressed_Sentiment test
+Processing
+bigscience/P3 rotten_tomatoes_Writer_Expressed_Sentiment validation
+Processing
+bigscience/P3 rotten_tomatoes_Writer_Expressed_Sentiment test
+Processing
+bigscience/P3 samsum_Generate_a_summary_for_this_dialogue validation
+Processing
+bigscience/P3 samsum_Generate_a_summary_for_this_dialogue test
+Processing
+bigscience/P3 samsum_Given_the_above_dialogue_write_a_summary validation
+Processing
+bigscience/P3 samsum_Given_the_above_dialogue_write_a_summary test
+Processing
+bigscience/P3 samsum_Sum_up_the_following_dialogue validation
+Processing
+bigscience/P3 samsum_Sum_up_the_following_dialogue test
+Processing
+bigscience/P3 samsum_Summarize_ validation
+Processing
+bigscience/P3 samsum_Summarize_ test
+Processing
+bigscience/P3 samsum_Summarize_this_dialogue_ validation
+Processing
+bigscience/P3 samsum_Summarize_this_dialogue_ test
+Processing
+bigscience/P3 samsum_To_sum_up_this_dialog validation
+Processing
+bigscience/P3 samsum_To_sum_up_this_dialog test
+Processing
+bigscience/P3 samsum_Write_a_dialogue_that_match_this_summary validation
+Processing
+bigscience/P3 samsum_Write_a_dialogue_that_match_this_summary test
+Processing
+bigscience/P3 sciq_Direct_Question validation
+Processing
+bigscience/P3 sciq_Direct_Question test
+Processing
+bigscience/P3 sciq_Direct_Question_Closed_Book_ validation
+Processing
+bigscience/P3 sciq_Direct_Question_Closed_Book_ test
+Processing
+bigscience/P3 sciq_Multiple_Choice validation
+Processing
+bigscience/P3 sciq_Multiple_Choice test
+Processing
+bigscience/P3 sciq_Multiple_Choice_Closed_Book_ validation
+Processing
+bigscience/P3 sciq_Multiple_Choice_Closed_Book_ test
+Processing
+bigscience/P3 sciq_Multiple_Choice_Question_First validation
+Processing
+bigscience/P3 sciq_Multiple_Choice_Question_First test
+Processing
+bigscience/P3 social_i_qa_Check_if_a_random_answer_is_valid_or_not validation
+Processing
+bigscience/P3 social_i_qa_Generate_answer validation
+Processing
+bigscience/P3 social_i_qa_Generate_the_question_from_the_answer validation
+Processing
+bigscience/P3 social_i_qa_I_was_wondering validation
+Processing
+bigscience/P3 social_i_qa_Show_choices_and_generate_answer validation
+Processing
+bigscience/P3 social_i_qa_Show_choices_and_generate_index validation
+Processing
+bigscience/P3 squad_v2_Jeopardy_with_Context validation
+Processing
+bigscience/P3 squad_v2_Jeopardy_without_Context validation
+Processing
+bigscience/P3 squad_v2_Questions_with_Context validation
+Processing
+bigscience/P3 squad_v2_Questions_with_Context_Without_Prompt_Keywords validation
+Processing
+bigscience/P3 squad_v2_Questions_with_Context_Without_Prompt_Keywords_unanswerable validation
+Processing
+bigscience/P3 squad_v2_Questions_with_Context_unanswerable validation
+Processing
+bigscience/P3 squad_v2_Topic_Prediction_Context validation
+Processing
+bigscience/P3 squad_v2_Topic_Prediction_Context_with_randomized_prompt_options validation
+Processing
+bigscience/P3 squad_v2_Topic_Prediction_Context_with_randomized_prompt_options_placed_in_the_end validation
+Processing
+bigscience/P3 squad_v2_Topic_Prediction_Question_and_Answer_Pair validation
+Processing
+bigscience/P3 squad_v2_Trivia validation
+Processing
+bigscience/P3 squad_v2_Unanwerable_question validation
+Processing
+bigscience/P3 super_glue_boolq_GPT_3_Style validation
+Processing
+bigscience/P3 super_glue_boolq_GPT_3_Style test
+Processing
+bigscience/P3 super_glue_boolq_I_wonder_ validation
+Processing
+bigscience/P3 super_glue_boolq_I_wonder_ test
+Processing
+bigscience/P3 super_glue_boolq_after_reading validation
+Processing
+bigscience/P3 super_glue_boolq_after_reading test
+Processing
+bigscience/P3 super_glue_boolq_based_on_the_following_passage validation
+Processing
+bigscience/P3 super_glue_boolq_based_on_the_following_passage test
+Processing
+bigscience/P3 super_glue_boolq_based_on_the_previous_passage validation
+Processing
+bigscience/P3 super_glue_boolq_based_on_the_previous_passage test
+Processing
+bigscience/P3 super_glue_boolq_could_you_tell_me_ validation
+Processing
+bigscience/P3 super_glue_boolq_could_you_tell_me_ test
+Processing
+bigscience/P3 super_glue_boolq_exam validation
+Processing
+bigscience/P3 super_glue_boolq_exam test
+Processing
+bigscience/P3 super_glue_boolq_exercise validation
+Processing
+bigscience/P3 super_glue_boolq_exercise test
+Processing
+bigscience/P3 super_glue_boolq_valid_binary validation
+Processing
+bigscience/P3 super_glue_boolq_valid_binary test
+Processing
+bigscience/P3 super_glue_boolq_yes_no_question validation
+Processing
+bigscience/P3 super_glue_boolq_yes_no_question test
+Processing
+bigscience/P3 super_glue_cb_GPT_3_style validation
+Processing
+bigscience/P3 super_glue_cb_GPT_3_style test
+Processing
+bigscience/P3 super_glue_cb_GPT_3_style_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_GPT_3_style_score_eval test
+Processing
+bigscience/P3 super_glue_cb_MNLI_crowdsource validation
+Processing
+bigscience/P3 super_glue_cb_MNLI_crowdsource test
+Processing
+bigscience/P3 super_glue_cb_MNLI_crowdsource_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_MNLI_crowdsource_score_eval test
+Processing
+bigscience/P3 super_glue_cb_always_sometimes_never validation
+Processing
+bigscience/P3 super_glue_cb_always_sometimes_never test
+Processing
+bigscience/P3 super_glue_cb_always_sometimes_never_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_always_sometimes_never_score_eval test
+Processing
+bigscience/P3 super_glue_cb_based_on_the_previous_passage validation
+Processing
+bigscience/P3 super_glue_cb_based_on_the_previous_passage test
+Processing
+bigscience/P3 super_glue_cb_based_on_the_previous_passage_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_based_on_the_previous_passage_score_eval test
+Processing
+bigscience/P3 super_glue_cb_can_we_infer validation
+Processing
+bigscience/P3 super_glue_cb_can_we_infer test
+Processing
+bigscience/P3 super_glue_cb_can_we_infer_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_can_we_infer_score_eval test
+Processing
+bigscience/P3 super_glue_cb_claim_true_false_inconclusive validation
+Processing
+bigscience/P3 super_glue_cb_claim_true_false_inconclusive test
+Processing
+bigscience/P3 super_glue_cb_claim_true_false_inconclusive_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_claim_true_false_inconclusive_score_eval test
+Processing
+bigscience/P3 super_glue_cb_consider_always_sometimes_never validation
+Processing
+bigscience/P3 super_glue_cb_consider_always_sometimes_never test
+Processing
+bigscience/P3 super_glue_cb_consider_always_sometimes_never_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_consider_always_sometimes_never_score_eval test
+Processing
+bigscience/P3 super_glue_cb_does_it_follow_that validation
+Processing
+bigscience/P3 super_glue_cb_does_it_follow_that test
+Processing
+bigscience/P3 super_glue_cb_does_it_follow_that_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_does_it_follow_that_score_eval test
+Processing
+bigscience/P3 super_glue_cb_does_this_imply validation
+Processing
+bigscience/P3 super_glue_cb_does_this_imply test
+Processing
+bigscience/P3 super_glue_cb_does_this_imply_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_does_this_imply_score_eval test
+Processing
+bigscience/P3 super_glue_cb_guaranteed_possible_impossible validation
+Processing
+bigscience/P3 super_glue_cb_guaranteed_possible_impossible test
+Processing
+bigscience/P3 super_glue_cb_guaranteed_possible_impossible_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_guaranteed_possible_impossible_score_eval test
+Processing
+bigscience/P3 super_glue_cb_guaranteed_true validation
+Processing
+bigscience/P3 super_glue_cb_guaranteed_true test
+Processing
+bigscience/P3 super_glue_cb_guaranteed_true_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_guaranteed_true_score_eval test
+Processing
+bigscience/P3 super_glue_cb_justified_in_saying validation
+Processing
+bigscience/P3 super_glue_cb_justified_in_saying test
+Processing
+bigscience/P3 super_glue_cb_justified_in_saying_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_justified_in_saying_score_eval test
+Processing
+bigscience/P3 super_glue_cb_must_be_true validation
+Processing
+bigscience/P3 super_glue_cb_must_be_true test
+Processing
+bigscience/P3 super_glue_cb_must_be_true_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_must_be_true_score_eval test
+Processing
+bigscience/P3 super_glue_cb_should_assume validation
+Processing
+bigscience/P3 super_glue_cb_should_assume test
+Processing
+bigscience/P3 super_glue_cb_should_assume_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_should_assume_score_eval test
+Processing
+bigscience/P3 super_glue_cb_take_the_following_as_truth validation
+Processing
+bigscience/P3 super_glue_cb_take_the_following_as_truth test
+Processing
+bigscience/P3 super_glue_cb_take_the_following_as_truth_score_eval validation
+Processing
+bigscience/P3 super_glue_cb_take_the_following_as_truth_score_eval test
+Processing
+bigscience/P3 super_glue_copa_C1_or_C2_premise_so_because_ validation
+Processing
+bigscience/P3 super_glue_copa_C1_or_C2_premise_so_because_ test
+Processing
+bigscience/P3 super_glue_copa_C1_or_C2_premise_so_because__score_eval validation
+Processing
+bigscience/P3 super_glue_copa_C1_or_C2_premise_so_because__score_eval test
+Processing
+bigscience/P3 super_glue_copa__As_a_result_C1_or_C2_ validation
+Processing
+bigscience/P3 super_glue_copa__As_a_result_C1_or_C2_ test
+Processing
+bigscience/P3 super_glue_copa__As_a_result_C1_or_C2__score_eval validation
+Processing
+bigscience/P3 super_glue_copa__As_a_result_C1_or_C2__score_eval test
+Processing
+bigscience/P3 super_glue_copa__What_could_happen_next_C1_or_C2_ validation
+Processing
+bigscience/P3 super_glue_copa__What_could_happen_next_C1_or_C2_ test
+Processing
+bigscience/P3 super_glue_copa__What_could_happen_next_C1_or_C2__score_eval validation
+Processing
+bigscience/P3 super_glue_copa__What_could_happen_next_C1_or_C2__score_eval test
+Processing
+bigscience/P3 super_glue_copa__which_may_be_caused_by validation
+Processing
+bigscience/P3 super_glue_copa__which_may_be_caused_by test
+Processing
+bigscience/P3 super_glue_copa__which_may_be_caused_by_score_eval validation
+Processing
+bigscience/P3 super_glue_copa__which_may_be_caused_by_score_eval test
+Processing
+bigscience/P3 super_glue_copa__why_C1_or_C2 validation
+Processing
+bigscience/P3 super_glue_copa__why_C1_or_C2 test
+Processing
+bigscience/P3 super_glue_copa__why_C1_or_C2_score_eval validation
+Processing
+bigscience/P3 super_glue_copa__why_C1_or_C2_score_eval test
+Processing
+bigscience/P3 super_glue_copa_best_option validation
+Processing
+bigscience/P3 super_glue_copa_best_option test
+Processing
+bigscience/P3 super_glue_copa_best_option_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_best_option_score_eval test
+Processing
+bigscience/P3 super_glue_copa_cause_effect validation
+Processing
+bigscience/P3 super_glue_copa_cause_effect test
+Processing
+bigscience/P3 super_glue_copa_cause_effect_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_cause_effect_score_eval test
+Processing
+bigscience/P3 super_glue_copa_choose validation
+Processing
+bigscience/P3 super_glue_copa_choose test
+Processing
+bigscience/P3 super_glue_copa_choose_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_choose_score_eval test
+Processing
+bigscience/P3 super_glue_copa_exercise validation
+Processing
+bigscience/P3 super_glue_copa_exercise test
+Processing
+bigscience/P3 super_glue_copa_exercise_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_exercise_score_eval test
+Processing
+bigscience/P3 super_glue_copa_i_am_hesitating validation
+Processing
+bigscience/P3 super_glue_copa_i_am_hesitating test
+Processing
+bigscience/P3 super_glue_copa_i_am_hesitating_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_i_am_hesitating_score_eval test
+Processing
+bigscience/P3 super_glue_copa_more_likely validation
+Processing
+bigscience/P3 super_glue_copa_more_likely test
+Processing
+bigscience/P3 super_glue_copa_more_likely_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_more_likely_score_eval test
+Processing
+bigscience/P3 super_glue_copa_plausible_alternatives validation
+Processing
+bigscience/P3 super_glue_copa_plausible_alternatives test
+Processing
+bigscience/P3 super_glue_copa_plausible_alternatives_score_eval validation
+Processing
+bigscience/P3 super_glue_copa_plausible_alternatives_score_eval test
+Processing
+bigscience/P3 super_glue_multirc_I_was_going_to_say_ validation
+Processing
+bigscience/P3 super_glue_multirc_I_was_going_to_say_ test
+Processing
+bigscience/P3 super_glue_multirc_Would_it_be_good_to_answer_ validation
+Processing
+bigscience/P3 super_glue_multirc_Would_it_be_good_to_answer_ test
+Processing
+bigscience/P3 super_glue_multirc_confirm validation
+Processing
+bigscience/P3 super_glue_multirc_confirm test
+Processing
+bigscience/P3 super_glue_multirc_correct validation
+Processing
+bigscience/P3 super_glue_multirc_correct test
+Processing
+bigscience/P3 super_glue_multirc_decide_valid validation
+Processing
+bigscience/P3 super_glue_multirc_decide_valid test
+Processing
+bigscience/P3 super_glue_multirc_found_this_answer validation
+Processing
+bigscience/P3 super_glue_multirc_found_this_answer test
+Processing
+bigscience/P3 super_glue_multirc_grading validation
+Processing
+bigscience/P3 super_glue_multirc_grading test
+Processing
+bigscience/P3 super_glue_multirc_is_a_correct_answer_ validation
+Processing
+bigscience/P3 super_glue_multirc_is_a_correct_answer_ test
+Processing
+bigscience/P3 super_glue_multirc_is_the_correct_answer_ validation
+Processing
+bigscience/P3 super_glue_multirc_is_the_correct_answer_ test
+Processing
+bigscience/P3 super_glue_multirc_paragraph_question_is_it_ validation
+Processing
+bigscience/P3 super_glue_multirc_paragraph_question_is_it_ test
+Processing
+bigscience/P3 super_glue_record_Add_sentence_after_after_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_Add_sentence_after_after_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_Add_sentence_after_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_Add_sentence_after_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_Can_you_figure_out_ validation
+Processing
+bigscience/P3 super_glue_record_Can_you_figure_out_ test
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_summary_only_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_summary_only_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_with_labels_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_with_labels_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_with_labels_without_hyphens_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_with_labels_without_hyphens_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_without_hyphens_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_GPT_3_style_without_hyphens_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_In_the_question_above_the_placeholder_stands_for validation
+Processing
+bigscience/P3 super_glue_record_In_the_question_above_the_placeholder_stands_for test
+Processing
+bigscience/P3 super_glue_record_New_highlight_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_New_highlight_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_News_article_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_News_article_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_Summary_first_continuation_choices_ validation
+Processing
+bigscience/P3 super_glue_record_Summary_first_continuation_choices_ test
+Processing
+bigscience/P3 super_glue_record_What_could_the_placeholder_be_ validation
+Processing
+bigscience/P3 super_glue_record_What_could_the_placeholder_be_ test
+Processing
+bigscience/P3 super_glue_record_Which_one_is_the_placeholder_ validation
+Processing
+bigscience/P3 super_glue_record_Which_one_is_the_placeholder_ test
+Processing
+bigscience/P3 super_glue_record_choose_between validation
+Processing
+bigscience/P3 super_glue_record_choose_between test
+Processing
+bigscience/P3 super_glue_record_corrupted validation
+Processing
+bigscience/P3 super_glue_record_corrupted test
+Processing
+bigscience/P3 super_glue_record_exercise validation
+Processing
+bigscience/P3 super_glue_record_exercise test
+Processing
+bigscience/P3 super_glue_record_pick_one_option validation
+Processing
+bigscience/P3 super_glue_record_pick_one_option test
+Processing
+bigscience/P3 super_glue_record_the_placeholder_refers_to_ validation
+Processing
+bigscience/P3 super_glue_record_the_placeholder_refers_to_ test
+Processing
+bigscience/P3 super_glue_record_trying_to_decide validation
+Processing
+bigscience/P3 super_glue_record_trying_to_decide test
+Processing
+bigscience/P3 super_glue_rte_GPT_3_style validation
+Processing
+bigscience/P3 super_glue_rte_GPT_3_style test
+Processing
+bigscience/P3 super_glue_rte_GPT_3_style_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_GPT_3_style_score_eval test
+Processing
+bigscience/P3 super_glue_rte_MNLI_crowdsource validation
+Processing
+bigscience/P3 super_glue_rte_MNLI_crowdsource test
+Processing
+bigscience/P3 super_glue_rte_MNLI_crowdsource_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_MNLI_crowdsource_score_eval test
+Processing
+bigscience/P3 super_glue_rte_based_on_the_previous_passage validation
+Processing
+bigscience/P3 super_glue_rte_based_on_the_previous_passage test
+Processing
+bigscience/P3 super_glue_rte_based_on_the_previous_passage_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_based_on_the_previous_passage_score_eval test
+Processing
+bigscience/P3 super_glue_rte_can_we_infer validation
+Processing
+bigscience/P3 super_glue_rte_can_we_infer test
+Processing
+bigscience/P3 super_glue_rte_can_we_infer_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_can_we_infer_score_eval test
+Processing
+bigscience/P3 super_glue_rte_does_it_follow_that validation
+Processing
+bigscience/P3 super_glue_rte_does_it_follow_that test
+Processing
+bigscience/P3 super_glue_rte_does_it_follow_that_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_does_it_follow_that_score_eval test
+Processing
+bigscience/P3 super_glue_rte_does_this_imply validation
+Processing
+bigscience/P3 super_glue_rte_does_this_imply test
+Processing
+bigscience/P3 super_glue_rte_does_this_imply_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_does_this_imply_score_eval test
+Processing
+bigscience/P3 super_glue_rte_guaranteed_true validation
+Processing
+bigscience/P3 super_glue_rte_guaranteed_true test
+Processing
+bigscience/P3 super_glue_rte_guaranteed_true_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_guaranteed_true_score_eval test
+Processing
+bigscience/P3 super_glue_rte_justified_in_saying validation
+Processing
+bigscience/P3 super_glue_rte_justified_in_saying test
+Processing
+bigscience/P3 super_glue_rte_justified_in_saying_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_justified_in_saying_score_eval test
+Processing
+bigscience/P3 super_glue_rte_must_be_true validation
+Processing
+bigscience/P3 super_glue_rte_must_be_true test
+Processing
+bigscience/P3 super_glue_rte_must_be_true_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_must_be_true_score_eval test
+Processing
+bigscience/P3 super_glue_rte_should_assume validation
+Processing
+bigscience/P3 super_glue_rte_should_assume test
+Processing
+bigscience/P3 super_glue_rte_should_assume_score_eval validation
+Processing
+bigscience/P3 super_glue_rte_should_assume_score_eval test
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt validation
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt test
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt_score_eval test
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt_with_label validation
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt_with_label test
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt_with_label_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_GPT_3_prompt_with_label_score_eval test
+Processing
+bigscience/P3 super_glue_wic_affirmation_true_or_false validation
+Processing
+bigscience/P3 super_glue_wic_affirmation_true_or_false test
+Processing
+bigscience/P3 super_glue_wic_affirmation_true_or_false_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_affirmation_true_or_false_score_eval test
+Processing
+bigscience/P3 super_glue_wic_grammar_homework validation
+Processing
+bigscience/P3 super_glue_wic_grammar_homework test
+Processing
+bigscience/P3 super_glue_wic_grammar_homework_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_grammar_homework_score_eval test
+Processing
+bigscience/P3 super_glue_wic_polysemous validation
+Processing
+bigscience/P3 super_glue_wic_polysemous test
+Processing
+bigscience/P3 super_glue_wic_polysemous_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_polysemous_score_eval test
+Processing
+bigscience/P3 super_glue_wic_question_context validation
+Processing
+bigscience/P3 super_glue_wic_question_context test
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning validation
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning test
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning_score_eval test
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning_with_label validation
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning_with_label test
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning_with_label_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_question_context_meaning_with_label_score_eval test
+Processing
+bigscience/P3 super_glue_wic_question_context_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_question_context_score_eval test
+Processing
+bigscience/P3 super_glue_wic_same_sense validation
+Processing
+bigscience/P3 super_glue_wic_same_sense test
+Processing
+bigscience/P3 super_glue_wic_same_sense_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_same_sense_score_eval test
+Processing
+bigscience/P3 super_glue_wic_similar_sense validation
+Processing
+bigscience/P3 super_glue_wic_similar_sense test
+Processing
+bigscience/P3 super_glue_wic_similar_sense_score_eval validation
+Processing
+bigscience/P3 super_glue_wic_similar_sense_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_GPT_3_Style validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_GPT_3_Style test
+Processing
+bigscience/P3 super_glue_wsc.fixed_GPT_3_Style_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_GPT_3_Style_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_I_think_they_mean validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_I_think_they_mean test
+Processing
+bigscience/P3 super_glue_wsc.fixed_I_think_they_mean_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_I_think_they_mean_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_Who_or_what_is_are validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_Who_or_what_is_are test
+Processing
+bigscience/P3 super_glue_wsc.fixed_Who_or_what_is_are_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_Who_or_what_is_are_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_by_p_they_mean validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_by_p_they_mean test
+Processing
+bigscience/P3 super_glue_wsc.fixed_by_p_they_mean_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_by_p_they_mean_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_p_stand_for validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_p_stand_for test
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_p_stand_for_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_p_stand_for_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_the_pronoun_refer_to validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_the_pronoun_refer_to test
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_the_pronoun_refer_to_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_does_the_pronoun_refer_to_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_in_other_words validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_in_other_words test
+Processing
+bigscience/P3 super_glue_wsc.fixed_in_other_words_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_in_other_words_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_p_is_are_r validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_p_is_are_r test
+Processing
+bigscience/P3 super_glue_wsc.fixed_p_is_are_r_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_p_is_are_r_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_replaced_with validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_replaced_with test
+Processing
+bigscience/P3 super_glue_wsc.fixed_replaced_with_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_replaced_with_score_eval test
+Processing
+bigscience/P3 super_glue_wsc.fixed_the_pronoun_refers_to validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_the_pronoun_refers_to test
+Processing
+bigscience/P3 super_glue_wsc.fixed_the_pronoun_refers_to_score_eval validation
+Processing
+bigscience/P3 super_glue_wsc.fixed_the_pronoun_refers_to_score_eval test
+Processing
+bigscience/P3 trec_fine_grained_ABBR test
+Processing
+bigscience/P3 trec_fine_grained_ABBR_context_first test
+Processing
+bigscience/P3 trec_fine_grained_DESC test
+Processing
+bigscience/P3 trec_fine_grained_DESC_context_first test
+Processing
+bigscience/P3 trec_fine_grained_ENTY test
+Processing
+bigscience/P3 trec_fine_grained_HUM test
+Processing
+bigscience/P3 trec_fine_grained_HUM_context_first test
+Processing
+bigscience/P3 trec_fine_grained_LOC test
+Processing
+bigscience/P3 trec_fine_grained_LOC_context_first test
+Processing
+bigscience/P3 trec_fine_grained_NUM test
+Processing
+bigscience/P3 trec_fine_grained_NUM_context_first test
+Processing
+bigscience/P3 trec_fine_grained_open test
+Processing
+bigscience/P3 trec_fine_grained_open_context_first test
+Processing
+bigscience/P3 trec_pick_the_best_descriptor test
+Processing
+bigscience/P3 trec_trec1 test
+Processing
+bigscience/P3 trec_trec2 test
+Processing
+bigscience/P3 trec_what_category_best_describe test
+Processing
+bigscience/P3 trec_which_category_best_describes test
+Processing
+bigscience/P3 trivia_qa_unfiltered_first_person_context validation
+Processing
+bigscience/P3 trivia_qa_unfiltered_first_person_context test
+Processing
+bigscience/P3 trivia_qa_unfiltered_formal_description validation
+Processing
+bigscience/P3 trivia_qa_unfiltered_formal_description test
+Processing
+bigscience/P3 trivia_qa_unfiltered_guess_question validation
+Processing
+bigscience/P3 trivia_qa_unfiltered_question_answer validation
+Processing
+bigscience/P3 trivia_qa_unfiltered_question_answer test
+Processing
+bigscience/P3 trivia_qa_unfiltered_question_with_instruction validation
+Processing
+bigscience/P3 trivia_qa_unfiltered_question_with_instruction test
+Processing
+bigscience/P3 web_questions_get_the_answer test
+Processing
+bigscience/P3 web_questions_potential_correct_answer test
+Processing
+bigscience/P3 web_questions_question_answer test
+Processing
+bigscience/P3 web_questions_short_general_knowledge_q test
+Processing
+bigscience/P3 web_questions_whats_the_answer test
+Processing
+bigscience/P3 wiki_bio_comprehension test
+Processing
+bigscience/P3 wiki_bio_comprehension val
+Processing
+bigscience/P3 wiki_bio_guess_person test
+Processing
+bigscience/P3 wiki_bio_guess_person val
+Processing
+bigscience/P3 wiki_bio_key_content test
+Processing
+bigscience/P3 wiki_bio_key_content val
+Processing
+bigscience/P3 wiki_bio_what_content test
+Processing
+bigscience/P3 wiki_bio_what_content val
+Processing
+bigscience/P3 wiki_bio_who test
+Processing
+bigscience/P3 wiki_bio_who val
+Processing
+bigscience/P3 wiki_hop_original_choose_best_object_affirmative_1 validation
+Processing
+bigscience/P3 wiki_hop_original_choose_best_object_affirmative_2 validation
+Processing
+bigscience/P3 wiki_hop_original_choose_best_object_affirmative_3 validation
+Processing
+bigscience/P3 wiki_hop_original_choose_best_object_interrogative_1 validation
+Processing
+bigscience/P3 wiki_hop_original_choose_best_object_interrogative_2 validation
+Processing
+bigscience/P3 wiki_hop_original_explain_relation validation
+Processing
+bigscience/P3 wiki_hop_original_generate_object validation
+Processing
+bigscience/P3 wiki_hop_original_generate_subject validation
+Processing
+bigscience/P3 wiki_hop_original_generate_subject_and_object validation
+Processing
+bigscience/P3 wiki_qa_Decide_good_answer validation
+Processing
+bigscience/P3 wiki_qa_Decide_good_answer test
+Processing
+bigscience/P3 wiki_qa_Direct_Answer_to_Question validation
+Processing
+bigscience/P3 wiki_qa_Direct_Answer_to_Question test
+Processing
+bigscience/P3 wiki_qa_Generate_Question_from_Topic validation
+Processing
+bigscience/P3 wiki_qa_Generate_Question_from_Topic test
+Processing
+bigscience/P3 wiki_qa_Is_This_True_ validation
+Processing
+bigscience/P3 wiki_qa_Is_This_True_ test
+Processing
+bigscience/P3 wiki_qa_Jeopardy_style validation
+Processing
+bigscience/P3 wiki_qa_Jeopardy_style test
+Processing
+bigscience/P3 wiki_qa_Topic_Prediction_Answer_Only validation
+Processing
+bigscience/P3 wiki_qa_Topic_Prediction_Answer_Only test
+Processing
+bigscience/P3 wiki_qa_Topic_Prediction_Question_Only validation
+Processing
+bigscience/P3 wiki_qa_Topic_Prediction_Question_Only test
+Processing
+bigscience/P3 wiki_qa_Topic_Prediction_Question_and_Answer_Pair validation
+Processing
+bigscience/P3 wiki_qa_Topic_Prediction_Question_and_Answer_Pair test
+Processing
+bigscience/P3 wiki_qa_automatic_system validation
+Processing
+bigscience/P3 wiki_qa_automatic_system test
+Processing
+bigscience/P3 wiki_qa_exercise validation
+Processing
+bigscience/P3 wiki_qa_exercise test
+Processing
+bigscience/P3 wiki_qa_found_on_google validation
+Processing
+bigscience/P3 wiki_qa_found_on_google test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_Replace validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_Replace test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_Replace_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_Replace_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_does_underscore_refer_to validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_does_underscore_refer_to test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_does_underscore_refer_to_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_does_underscore_refer_to_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_fill_in_the_blank validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_fill_in_the_blank test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_fill_in_the_blank_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_fill_in_the_blank_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_stand_for validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_stand_for test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_stand_for_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_stand_for_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_underscore_refer_to validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_underscore_refer_to test
+Processing
+bigscience/P3 winogrande_winogrande_debiased_underscore_refer_to_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_debiased_underscore_refer_to_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_xl_Replace validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_Replace test
+Processing
+bigscience/P3 winogrande_winogrande_xl_Replace_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_Replace_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_xl_does_underscore_refer_to validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_does_underscore_refer_to test
+Processing
+bigscience/P3 winogrande_winogrande_xl_does_underscore_refer_to_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_does_underscore_refer_to_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_xl_fill_in_the_blank validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_fill_in_the_blank test
+Processing
+bigscience/P3 winogrande_winogrande_xl_fill_in_the_blank_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_fill_in_the_blank_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_xl_stand_for validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_stand_for test
+Processing
+bigscience/P3 winogrande_winogrande_xl_stand_for_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_stand_for_score_eval test
+Processing
+bigscience/P3 winogrande_winogrande_xl_underscore_refer_to validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_underscore_refer_to test
+Processing
+bigscience/P3 winogrande_winogrande_xl_underscore_refer_to_score_eval validation
+Processing
+bigscience/P3 winogrande_winogrande_xl_underscore_refer_to_score_eval test
+Processing
+bigscience/P3 wiqa_does_the_supposed_perturbation_have_an_effect validation
+Processing
+bigscience/P3 wiqa_does_the_supposed_perturbation_have_an_effect test
+Processing
+bigscience/P3 wiqa_effect_with_label_answer validation
+Processing
+bigscience/P3 wiqa_effect_with_label_answer test
+Processing
+bigscience/P3 wiqa_effect_with_string_answer validation
+Processing
+bigscience/P3 wiqa_effect_with_string_answer test
+Processing
+bigscience/P3 wiqa_what_is_the_final_step_of_the_following_process validation
+Processing
+bigscience/P3 wiqa_what_is_the_final_step_of_the_following_process test
+Processing
+bigscience/P3 wiqa_what_is_the_missing_first_step validation
+Processing
+bigscience/P3 wiqa_what_is_the_missing_first_step test
+Processing
+bigscience/P3 wiqa_what_might_be_the_first_step_of_the_process validation
+Processing
+bigscience/P3 wiqa_what_might_be_the_first_step_of_the_process test
+Processing
+bigscience/P3 wiqa_what_might_be_the_last_step_of_the_process validation
+Processing
+bigscience/P3 wiqa_what_might_be_the_last_step_of_the_process test
+Processing
+bigscience/P3 wiqa_which_of_the_following_is_the_supposed_perturbation validation
+Processing
+bigscience/P3 wiqa_which_of_the_following_is_the_supposed_perturbation test
+Processing
+bigscience/P3 xsum_DOC_boils_down_to_simple_idea_that validation
+Processing
+bigscience/P3 xsum_DOC_boils_down_to_simple_idea_that test
+Processing
+bigscience/P3 xsum_DOC_given_above_write_one_sentence validation
+Processing
+bigscience/P3 xsum_DOC_given_above_write_one_sentence test
+Processing
+bigscience/P3 xsum_DOC_how_would_you_rephrase_few_words validation
+Processing
+bigscience/P3 xsum_DOC_how_would_you_rephrase_few_words test
+Processing
+bigscience/P3 xsum_DOC_tldr validation
+Processing
+bigscience/P3 xsum_DOC_tldr test
+Processing
+bigscience/P3 xsum_DOC_write_summary_of_above validation
+Processing
+bigscience/P3 xsum_DOC_write_summary_of_above test
+Processing
+bigscience/P3 xsum_article_DOC_summary validation
+Processing
+bigscience/P3 xsum_article_DOC_summary test
+Processing
+bigscience/P3 xsum_college_roommate_asked_DOC_so_I_recap validation
+Processing
+bigscience/P3 xsum_college_roommate_asked_DOC_so_I_recap test
+Processing
+bigscience/P3 xsum_read_below_DOC_write_abstract validation
+Processing
+bigscience/P3 xsum_read_below_DOC_write_abstract test
+Processing
+bigscience/P3 xsum_summarize_DOC validation
+Processing
+bigscience/P3 xsum_summarize_DOC test
+Processing
+bigscience/P3 xsum_summarize_this_DOC_summary validation
+Processing
+bigscience/P3 xsum_summarize_this_DOC_summary test
+Processing
+bigscience/P3 yelp_review_full_based_on_that test
+Processing
+bigscience/P3 yelp_review_full_format_rating test
+Processing
+bigscience/P3 yelp_review_full_format_score test
+Processing
+bigscience/P3 yelp_review_full_format_star test
+Processing
+bigscience/P3 yelp_review_full_on_a_scale test
+Processing
+bigscience/P3 yelp_review_full_so_i_would test
+Processing
+bigscience/P3 yelp_review_full_this_place test
+Processing
+codeparrot/apps all test
