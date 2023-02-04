@@ -1,0 +1,38 @@
+{
+    "group_1" : [
+            "/fsx/shared/pilev2/group1_filtered/arXiv_formatted",
+            "/fsx/shared/pilev2/group1_filtered/PubMed_formatted", 
+            "/fsx/shared/pilev2/group1_filtered/Gutenberg/", 
+            "/fsx/shared/pilev2/group1_filtered/FreeLaw",
+            "/fsx/shared/pilev2/group1_filtered/UbuntuIRC" ,
+            "/fsx/shared/pilev2/group1_filtered/EnWiki",
+            "/fsx/shared/pilev2/group1_filtered/EuroParliamentProceedings",
+            "/fsx/shared/pilev2/group1_filtered/PileOfLaw",
+            "/fsx/shared/pilev2/group1_filtered/OtherWiki"  ,
+            "/fsx/shared/pilev2/group1_filtered/S2ORC"
+
+    ],
+    "group_3":  
+    [
+    "/fsx/shared/pilev2_cleaned/DMMath", 
+    "/fsx/shared/pilev2_cleaned/CPDataset", 
+    "/fsx/shared/pilev2_cleaned/AI4Code", 
+    "/fsx/shared/pilev2_cleaned/GithubIssues_dedup",
+    "/fsx/shared/pilev2_cleaned/GithubDiff_ver2",
+    "/fsx/shared/pilev2_cleaned/AMPS",
+    "/fsx/shared/pilev2_cleaned/SODA/",
+    "/fsx/shared/pilev2_cleaned/Opensubtitles",
+    "/fsx/shared/the_stack_filtered_ext/batch_0",
+    "/fsx/shared/the_stack_filtered_ext/batch_1",
+    "/fsx/shared/the_stack_filtered_ext/batch_2",
+    "/fsx/shared/the_stack_filtered_ext/batch_3",
+    "/fsx/shared/the_stack_filtered_ext/batch_4",
+    "/fsx/shared/the_stack_filtered_ext/batch_5",
+    "/fsx/shared/the_stack_filtered_ext/batch_6",
+    "/fsx/shared/the_stack_filtered_ext/batch_7",
+    "/fsx/shared/the_stack_filtered_ext/batch_8",
+    "/fsx/shared/the_stack_filtered_ext/batch_9"
+
+]
+
+}
