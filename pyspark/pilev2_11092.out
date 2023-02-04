@@ -4,3 +4,6 @@ MEM IN GB: 129G
 starting org.apache.spark.deploy.worker.Worker, logging to /fsx/home-nathan/work/pilev2/pyspark/spark-3.3.1-bin-hadoop3/logs/spark-nathan-org.apache.spark.deploy.worker.Worker-1-cpu16-dy-r6i-4xlarge-4.out
 Hello from worker 0
 hi
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 11092 ON cpu16-dy-r6i-4xlarge-4 CANCELLED AT 2023-02-01T07:51:20 ***
+slurmstepd: error: *** STEP 11092.0 ON cpu16-dy-r6i-4xlarge-4 CANCELLED AT 2023-02-01T07:51:20 ***

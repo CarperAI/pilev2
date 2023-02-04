@@ -1,5 +1,7 @@
 import argparse
 
+import pandas as pd
+
 from faker import Faker
 from functools import partial
 from helpers import default_arguments, get_file_paths
@@ -55,6 +57,18 @@ parser.add_argument(
     default=0.01,
     help="The quantile to use for filtering.",
 )
+parser.add_argument(
+    "--ngram",
+    type=int,
+    default=13,
+    help="The ngram to use for filtering.",
+)
+parser.add_argument(
+    "--threshold",
+    type=float,
+    default=0.85,
+    help="The threshold to use for filtering.",
+)
 args = parser.parse_args()
 
 spark = build_spark_session(f"spark://{args.main_addr}:7077", args.num_cpus_per_node, args.mem_per_node)
@@ -64,65 +78,74 @@ paths = get_file_paths(args.bucket_name, args.data_dir, args.extension)
 dfs = []
 for data_source, files in paths.items():
     print(f"Processing {data_source}...")
-    df = spark.read.parquet(*files)
+    if args.extension == "parquet":
+        df = spark.read.parquet(*files)
+    elif args.extension == "jsonl.zst":
+        # dfs = []
+        # for file in files:
+        #     df = pd.read_json(file, lines=True, compression="infer")
+        #     dfs.append(df)
+        # df = pd.concat(dfs)
+        # df = spark.createDataFrame(df)
+        # df = pd.read_json(files[0], lines=True, compression="infer")
+        df = spark.read.json(files, multiLine=True)
     df = df.withColumn("data_source", lit(data_source))
+    print(df.count())
     dfs.append(df)
 
-    # # clean the data
-    # df = fix_utf8_encoding(df)
-
-    # # filter the data
-    # df = check_compression_ratio(df)
-
-    # # write the data to disk
-    # df.write.parquet(f"s3a://{args.bucket_name}/{args.data_dir}/{data_source}/cleaned.parquet")
-
 # combine the data
-df = dfs[0]
-for i in range(1, len(dfs)):
-    df = df.union(dfs[i])
+# df = dfs[0]
+# for i in range(1, len(dfs)):
+#     df = df.union(dfs[i])
 
-def filters(df, func, name):
-    print(f"Filtering {name}...")
-    df = df.withColumn(name, func("text"))
-    quantile = df.approxQuantile(name, [args.quantile], 0.0)[0]
-    df = df.filter(df[name] > quantile)
-    return df
-
-
-# Clean the data
-df = df.withColumn("text", udf_fix_utf8_encoding("text"))
-df = df.withColumn("text", udf_pii_cleaning("text"))
-
-# Filter the data
-df = filters(df, udf_check_char_repetition, "char_repetition")
-df = filters(df, udf_check_flagged_words, "flagged_words")
-df = filters(df, udf_check_stop_word_ratio, "stop_word_ratio")
-df = filters(df, udf_check_word_number, "word_number")
-df = filters(df, udf_check_compression_ratio, "compression_ratio")
-
-# Deduplicate the data
-
-# Exact duplicates
-pipeline = Pipeline(stages=[
-    RegexTokenizer(inputCol="text", outputCol="words", pattern="[^A-Za-z_0-9]"),
-    NGram(n=2, inputCol="words", outputCol="ngrams"),
-)
-pipeline_model = pipeline.fit(df)
-df = pipeline_model.transform(df)
-df = df.filter(size(col("ngrams")) > 0)
-
-hasher = HashingTF(inputCol="ngrams", outputCol="hashes")
-df = hasher.transform(df)
-df = df.dropDuplicates(["hashes"])
-
-# Similar duplicates
-lsh = MinHashLSH(inputCol="hashes", outputCol="hashes_lsh", seed=42)
-model = lsh.fit(df)
-duplicates = model.approxSimilarityJoin(df, df, 0.5, distCol="distance").filter("datasetA.id < datasetB.id").filter("datasetA.id != datasetB.id")
-df = df.filter(~df.id.isin(duplicates.select("datasetA.id").collect()))
+# def filters(df, func, name):
+#     print(f"Filtering {name}...")
+#     df = df.withColumn(name, func("cleaned_text"))
+#     quantile = df.approxQuantile(name, [args.quantile], 0.0)[0]
+#     df = df.filter(df[name] > quantile)
+#     return df
 
 
-# Write the data to disk per data source
-for data_source in paths.keys():
-    df.filter(df.data_source == data_source).write.parquet(f"s3a://{args.bucket_name}/{args.data_dir}/{data_source}/cleaned.parquet")
+# # Clean the data
+# df = df.withColumn("text", udf_fix_utf8_encoding("text"))
+# df = df.withColumn("text", udf_pii_cleaning("text"))
+
+# # Filter the data
+# df = filters(df, udf_check_char_repetition, "char_repetition")
+# df = filters(df, udf_check_flagged_words, "flagged_words")
+# df = filters(df, udf_check_stop_word_ratio, "stop_word_ratio")
+# df = filters(df, udf_check_word_number, "word_number")
+# df = filters(df, udf_check_compression_ratio, "compression_ratio")
+
+# # Deduplicate the data
+
+# # Exact duplicates
+# pipeline = Pipeline(stages=[
+#     RegexTokenizer(inputCol="text", outputCol="words", pattern="[^A-Za-z_0-9]"),
+#     NGram(n=args.ngram, inputCol="words", outputCol="ngrams"),
+# )
+# pipeline_model = pipeline.fit(df)
+# df = pipeline_model.transform(df)
+# df = df.filter(size(col("ngrams")) > 0)
+
+# hasher = HashingTF(inputCol="ngrams", outputCol="hashes")
+# df = hasher.transform(df)
+# df = df.dropDuplicates(["hashes"])
+
+# # Similar duplicates
+# lsh = MinHashLSH(inputCol="hashes", outputCol="hashes_lsh", seed=42)
+# model = lsh.fit(df)
+# duplicates = model.approxSimilarityJoin(
+#     df, df,
+#     1 - args.threshold,
+#     distCol="distance"
+# ).filter("datasetA.id < datasetB.id").filter("datasetA.id != datasetB.id")
+# df = df.filter(~df.id.isin(duplicates.select("datasetA.id").collect()))
+
+# # Write the data to disk per data source
+# for data_source in paths.keys():
+#     filtered_df = df.filter(df.data_source == data_source)
+#     if args.extension == "parquet":
+#         filtered_df.write.parquet(f"s3a://{args.bucket_name}/{args.output_dir}/{data_source}/cleaned.parquet")
+#     elif args.extension == "jsonl.zst":
+#         filtered_df.write.json(f"s3a://{args.bucket_name}/{args.output_dir}/{data_source}/cleaned.jsonl.gz", compression="gzip")

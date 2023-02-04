@@ -2,13 +2,13 @@
 
 # Set variables
 DATA_PATH=/fsx/shared/pilev2/group1_filtered
-OUTPUT_PATH=/fsx/shared/pilev2/decontam/other_benchmarks
+OUTPUT_PATH=/fsx/shared/pilev2/decontam
 
 # Create a list all of the directories in $DATA_PATH
 datasets=$(ls $DATA_PATH)
-mem=32GB
-cpus=16
-partition=cpu16
+mem=960GB
+cpus=128
+partition=cpu128
 temp_sbatch=./temp_sbatch.slurm
 mkdir ./logs
 export HF_ACCESS_TOKEN=hf_paJlpPLHECIqGJuDEMOwxnsmsbjhYRTqJH
@@ -36,6 +36,7 @@ for dataset in ${datasets[@]}; do
 #SBATCH --partition=$partition
 #SBATCH --comment=carper
 #SBATCH --export=ALL
+#SBATCH --time=05:00:00
 # ===== END SLURM OPTIONS =====
 source /fsx/nathan/miniconda3/bin/activate pilev2
 cd /fsx/home-nathan/work/pilev2/pile/processing/dedup

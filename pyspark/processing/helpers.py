@@ -24,6 +24,12 @@ def default_arguments():
         help="The directory where the data is stored.",
     )
     parser.add_argument(
+        "--output_dir",
+        type=str,
+        required=True,
+        help="The directory where the output should be stored.",
+    )
+    parser.add_argument(
         "--extension",
         type=str,
         required=True,
@@ -44,11 +50,11 @@ def default_arguments():
 
     return parser
 
-def get_file_paths(bucket, prefix, extension):
+def get_file_paths(bucket_name, prefix, extension):
     s3 = boto3.resource("s3")
-    bucket = s3.Bucket(bucket)
+    bucket = s3.Bucket(bucket_name)
     result = defaultdict(list)
     for obj in bucket.objects.filter(Prefix=prefix):
         if obj.key.endswith(extension):
-            result[obj.key.split("/")[-2]].append(f"s3a://{bucket.name}/{obj.key}")
+            result[obj.key.split("/")[-2]].append(f"s3a://{bucket_name}/{obj.key}")
     return result
