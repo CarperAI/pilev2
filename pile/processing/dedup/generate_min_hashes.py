@@ -233,6 +233,7 @@ if __name__ == "__main__":
         output: str = typer.Option(None, help="Store the minhash of the dataset, None to store in the same dir of dataset_path but added 'minhash' as suffix"),
         shard_size: str = typer.Option("1GB", help="Max shard size in GB"),
         output_format: str = typer.Option("hf_arrow", help="The output format"),
+        format: str = typer.Option("hf_arrow", help="The output format"),
         ):
         # write the output in the same dir of dataset_path but added 'minhash' as suffix
         if output is None:
@@ -249,7 +250,14 @@ if __name__ == "__main__":
         HASH_RANGES = [(i * R, (i + 1) * R) for i in range(B)]
         HASH_TABLES = [defaultdict(set) for _ in range(B)]
         time_measures["load_dataset"] = time.time()
-        ds = load_from_disk(dataset_path)
+        if format == "hf_arrow":
+            ds = load_from_disk(dataset_path)
+        elif format == 'parquet':
+            dataset_path = Path(dataset_path)
+            parquet_files = list(dataset_path.glob("*.parquet"))
+            ds = load_dataset ('parquet', data_files= {"train": [str(f) for f in parquet_files]})['train']
+        else:
+            raise ValueError(f"Unsupported format {format}")
         time_measures["load_dataset"] = time.time() - time_measures["load_dataset"]
         DATA_SIZE = len(ds)
         PERMUTATIONS = np.array(
