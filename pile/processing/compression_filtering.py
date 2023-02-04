@@ -2,14 +2,22 @@ import argparse
 
 import numpy as np
 
-from datasets import load_from_disk, load_dataset
+from datasets import disable_caching, load_from_disk, load_dataset
 from pathlib import Path
 from squeakily.core import Pipeline
-from squeakily.clean import fix_utf8_encoding
+from squeakily.clean import fix_utf8_encoding, replace_ip
 from squeakily.filter import check_compression_ratio
-import glob
+from functools import partial
+disable_caching()
 
+replace_ip_p = partial(replace_ip, dummy2="::")
+replace_ip_p.__name__ = "replace_ip_p"
 # Parse the arguments
+
+"""
+Compression filtering of a dataset and ipv6 format fix, fixes utf8 encoding, and shards the data.
+To be run on all datasets.
+"""
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--data_dir",
@@ -63,6 +71,11 @@ output_dir.mkdir(parents=True, exist_ok=True)
 data_files = [str(f) for f in list(data_dir.glob("*.parquet"))]
 ds = load_dataset("parquet", data_files = {"train" : data_files})
 ds = ds["train"]
+
+if data_dir.name.startswith("the_stack_filtered"):
+    columns = ["content"]
+else:
+    columns = ["text"]
 # add to ds the following columns:
 # - check_compression_ratio_criteria
 # - fix_utf8_encoding_criteria
@@ -70,9 +83,9 @@ datasources = [
     {
         "dataset": ds ,
         "name": data_dir.name,
-        "columns": ["text"],
+        "columns": columns,
         "filters": [check_compression_ratio],
-        "cleaners": [fix_utf8_encoding],
+        "cleaners": [fix_utf8_encoding, replace_ip_p],
     }
 ]
 pipeline = Pipeline(datasources)
@@ -113,16 +126,3 @@ for i, shard in enumerate(ds_shards):
             lines=True,
             orient="records",
         )
-
-"""
-Files failed to load:
-arXiv:
-part-00000-21ba2398-4145-4378-ace5-7a83491981ad-c000.snappy.parquet
-Gutenberg:
-part-00000-ff22b108-a53d-480d-8cc7-8243484df5bf-c000.snappy.parquet
-part-00805-ff22b108-a53d-480d-8cc7-8243484df5bf-c000.snappy.parquet
-
-S2ORC redo.
-
-
-"""
