@@ -25,7 +25,7 @@ data_dir = Path(args.data_dir)
 output_dir = Path(args.output_dir)
 
 benchmark_names = ["bigscience/P3", "codeparrot/apps", "wino_bias", "openai_humaneval", "mbpp", "ncoop57/mmmlu", "lambada"]
-bench_cleaner = BenchmarkCleaner(benchmark_names, output_dir / "benchmarks", threshold=0.85, num_perm=256, num_workers=116)
+bench_cleaner = BenchmarkCleaner(benchmark_names, output_dir / "benchmarks", threshold=0.85, num_perm=256, num_workers=48)
 parquets = [str(par) for par in data_dir.glob("*.parquet")]
 try:
     ds = load_dataset("parquet", data_files=parquets, split="train", num_proc=116)
