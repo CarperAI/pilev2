@@ -2,12 +2,19 @@ import argparse
 
 import numpy as np
 
-from datasets import load_from_disk, load_dataset
+from datasets import load_from_disk, load_dataset, disable_caching
+from functools import partial
 from pathlib import Path
 from squeakily.core import Pipeline
-from squeakily.clean import fix_utf8_encoding
+from squeakily.clean import fix_utf8_encoding, replace_ip
 from squeakily.filter import check_compression_ratio
 import glob
+
+disable_caching()
+
+replace_ip_p = partial(replace_ip, dummy2="::")
+replace_ip_p.__name__ = "replace_ip_p"
+# Parse the arguments
 
 # Parse the arguments
 parser = argparse.ArgumentParser()
@@ -72,7 +79,7 @@ datasources = [
         "name": data_dir.name,
         "columns": ["text"],
         "filters": [check_compression_ratio],
-        "cleaners": [fix_utf8_encoding],
+        "cleaners": [fix_utf8_encoding, replace_ip_p ],
     }
 ]
 pipeline = Pipeline(datasources)
