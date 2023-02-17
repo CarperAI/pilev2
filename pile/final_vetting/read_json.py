@@ -72,6 +72,7 @@ if __name__ == "__main__":
 
         file1_contents = read_jsonl_from_s3(file1_path, key, sample_size=sample_size, start_index=start_index)
 
+        exact_matches = 0
         if file2_contents is not None:
             for f1_line, f2_line in zip(file1_contents, file2_contents):
                 i = 0
@@ -79,10 +80,12 @@ if __name__ == "__main__":
                 if f1_line == f2_line:
                     print(f"Files match on line {i}")
                     print(f1_line)
+                    exact_matches += 1
                 else:
                     print(f"Files do not match on line {i}")
                     print(f"File 1: {f1_line} \t File 2: {f2_line}")
                 i += 1
+            print(f"Exact matches: {exact_matches}")
         else:
             for f1_line in file1_contents:
                 print(f1_line)
