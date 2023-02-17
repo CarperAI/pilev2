@@ -77,16 +77,15 @@ for ds in pipeline.datasources:
     # make directories for each datasource
     (output_dir / ds["name"]).mkdir(parents=True, exist_ok=True)
     # save the dataset with sharding
+    num_shards = 0
     if args.do_shard:
-        num_shards = 0
-        if args.do_sharding:
-            num_shards = len(ds['dataset']) // args.num_files_per_shard
-        if num_shards == 0:
-            num_shards = 1
-        ds_shards = [ds['dataset'].shard(num_shards, i, contiguous=True) for i in range(num_shards)]
-        # get file name from data_dir
-        file_name = data_dir.name
-        # save the shards
-        for i, shard in enumerate(ds_shards):
-            path = output_dir / f"{file_name}_shard_{i}.parquet" if i > 0 else output_dir / f"{file_name}.parquet"
-            shard.to_parquet(path)
+        num_shards = len(ds['dataset']) // args.num_files_per_shard
+    if num_shards == 0:
+        num_shards = 1
+    ds_shards = [ds['dataset'].shard(num_shards, i, contiguous=True) for i in range(num_shards)]
+    # get file name from data_dir
+    file_name = data_dir.name
+    # save the shards
+    for i, shard in enumerate(ds_shards):
+        path = output_dir / f"{file_name}_shard_{i}.parquet" if i > 0 else output_dir / f"{file_name}.parquet"
+        shard.to_parquet(path)
