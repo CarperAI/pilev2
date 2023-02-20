@@ -105,6 +105,7 @@ subfolder_paths = [
     'enwiki',
     'euro_parl',
     'free_law',
+    'github_diffs',
     'github_issues',
     'gutenberg',
     'open_subtitles',
@@ -112,10 +113,12 @@ subfolder_paths = [
     'pile_of_law',
     'pubmed',
     'reddit_dialogs',
+    'reddit_posts',
     's2orc',
     'soda',
     'stack_exchange',
     'ted_talks',
+    'the_stack',
     'ubuntu_irc',
     'uspto'
 ]
