@@ -64,8 +64,6 @@ HELP
     # submit job to tokenize the dataset
     # read the hostnames from the file
     hostnames=$(cat $spark_path/logs/$basename_dataset.hostnames.txt)
-    echo $spark_path/logs/$basename_dataset.hostnames.txt
-    echo $hostnames
     min_node_number=1000
     # get the first hostname
     # loop through the hostnames and get the one with the lowest number

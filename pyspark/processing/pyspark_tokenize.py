@@ -117,15 +117,13 @@ max_file_size = 250 * 1024 * 1024 # 250 MB
 # Handle this if output_dir is in s3 using the aws cli and os.system
 if args.output_dir.startswith("s3a://"):
     output_dir = args.output_dir.replace("s3a://", "")
-    # get all the files in the output directory
-    s3 = boto3.resource("s3")
-    bucket = s3.Bucket(output_dir.split("/")[0])
-    bucket_name = output_dir.split("/")[0]
-    # get the path until the dataset name
-    #TODO: This path thing does not work and is not general
-    # Use something like this: https://stackoverflow.com/questions/71577584/python-boto3-s3-list-only-current-directory-file-ignoring-subdirectory-files
-    dataset_name = '/'.join(output_dir.split("/")[:-1])
-    files = [f"s3://{bucket_name}/{dataset_name}/{f.key}" for f in bucket.objects.filter(Prefix=output_dir.split("/")[-1])]
+    root = args.data_dir
+    bucket = root.replace("s3a://", "").split("/")[0]
+    prefix = "/".join(root.replace("s3a://", "").split("/")[1:])
+    # create an S3 client
+    s3 = boto3.client("s3")
+    objects = s3.list_objects_v2(Bucket=bucket, Prefix=prefix)["Contents"]
+    files = [f"s3://{bucket}/{obj['Key']}" for obj in objects]
     print(files)
     for file in files:
         if file.endswith(".txt.gz"):
