@@ -46,8 +46,6 @@ for dataset in ${datasets[@]}; do
 source /fsx/home-erfan/miniconda3/bin/activate pilev2
 cd $spark_path
 sleep 2
-# Write jobId to a file
-#echo $SLURM_JOB_ID > ./logs/$basename_dataset.jobid.txt
 # Write the hostnames of the nodes to a file
 srun --comment carper hostname > ./logs/$basename_dataset.hostnames.txt
 # Start the Spark cluster
@@ -65,27 +63,28 @@ HELP
     done
     # add job id to a file
     echo $job_id >> $spark_path/logs/$basename_dataset.jobid.txt
+    # submit job to tokenize the dataset
+    # read the hostnames from the file
+    hostnames=$(cat $spark_path/logs/$basename_dataset.hostnames.txt)
+    echo $spark_path/logs/$basename_dataset.hostnames.txt
+    echo $hostnames
+    min_node_number=1000
+    # get the first hostname
+    # loop through the hostnames and get the one with the lowest number
+    for hostname in $hostnames; do
+        # get the last element of the hostname
+        # this is the node number
+        node_number=$(echo $hostname | cut -d '-' -f 5)
+        # if min_node_number is default of 1000, set it to the first node number
+        if [ $min_node_number -eq 1000 ]; then
+            min_node_number=$node_number
+            min_hostname=$hostname
 
-# submit job to tokenize the dataset
-# read the hostnames from the file
-hostnames=$(cat $spark_path/logs/$basename_dataset.hostnames.txt)
-# get the first hostname
-# loop through the hostnames and get the one with the lowest number
-#
-for hostname in $hostnames; do
-    # get the last element of the hostname
-    # this is the node number
-    node_number=$(echo $hostname | cut -d '-' -f 5)
-    # if the node number is less than the current min, update the min
-    if [ -z $min_node_number ]; then
-        min_node_number=$node_number
-        min_hostname=$hostname
-
-    elif [ $node_number -lt $min_node_number ]; then
-        min_node_number=$node_number
-        min_hostname=$hostname
-    fi
-done
+        elif [ $node_number -lt $min_node_number ]; then
+            min_node_number=$node_number
+            min_hostname=$hostname
+        fi
+    done
 
     node_name=$min_hostname
 
