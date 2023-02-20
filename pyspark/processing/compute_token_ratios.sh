@@ -68,3 +68,6 @@ python compute_token_ratios.py --data_dir $S3_PATH --output_dir $OUTPUT_PATH --n
 
 # kill the spark cluster
 scancel $job_id
+
+# remove the hostnames file
+rm $spark_path/logs/hostnames.txt

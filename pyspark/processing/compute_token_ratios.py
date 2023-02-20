@@ -2,7 +2,6 @@ from pyspark.ml import Pipeline
 from pyspark.ml.feature import RegexTokenizer, NGram, HashingTF, MinHashLSH
 from pyspark.sql.functions import col
 from spark_session_builder import build_spark_session
-from pyspark.sql.functions import length
 import tiktoken
 import os
 import argparse
@@ -13,6 +12,8 @@ import boto3
 import gzip
 import io
 from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType
+import pandas as pd
 
 
 parser = argparse.ArgumentParser()
@@ -90,15 +91,16 @@ for obj in objects:
 
 
 # create a PySpark DataFrame for each folder that contains JSON files compressed with gzip
-for path in subfolder_paths:
+for path in list(subfolder_paths):
     print(f"Processing folder: {path}") 
     json_files = [f"s3a://{bucket}/{p}" for p in json_gz_paths[path]]
-    print(f"Processing files: {json_files}")
+    print(f"Processing {len(json_files)} files...")
     # read all json.gz files in the directory as a single DataFrame
-    json_df = spark.read.json(*json_files)
+    json_df = spark.read.json(json_files)
     # select only the input_ids attribute and compute its length
     length_df = json_df.select(col("input_ids").alias("input_ids_length"))
-    length_df = length_df.withColumn("input_ids_length", length_df["input_ids_length"].apply(len))
+    # apply the python len function to each element of the input_ids attribute
+    length_df = length_df.withColumn("input_ids_length", udf(lambda x: len(x), IntegerType())("input_ids_length"))
 
 
     # compute the total length across all files in the directory
@@ -120,12 +122,12 @@ for path in subfolder_paths:
     subset_stats[display_path] = {"mean": subset_token_mean, "median": subset_token_median, "std": subset_token_std, "min": subset_token_min, "max": subset_token_max, "total_tokens": subset_token_size}
 
 
-# create a PySpark DataFrame from the dictionary of lengths
-stats_df = spark.createDataFrame([(k, v) for k, v in subset_stats.items()], ["subset", "mean", "median", "std", "min", "max", "total_tokens"])
+# create a PySpark DataFrame from the dictionary of subset stats
+stats_df = spark.createDataFrame(pd.DataFrame(subset_stats).T.reset_index().rename(columns={"index": "subset"}))
 
 # compute the ratio of the length of each subfolder to the average length
 # round to 2 decimal places
-stats_df = stats_df.withColumn("pilev2_ratio", round(stats_df["total_tokens"] / (total_length)), 2)
+stats_df = stats_df.withColumn("pilev2_ratio", stats_df["total_tokens"] / (total_length))
 
 # output directory setup
 output_dir = args.output_dir
@@ -134,15 +136,15 @@ if output_dir is None:
 Path(output_dir).mkdir(parents=True, exist_ok=True)
 
 # save the DataFrame as a CSV file inside the output directory
-length_df.toPandas().to_csv(os.path.join(output_dir, "subset_ratios.csv"), index=False)
+stats_df.toPandas().to_csv(os.path.join(output_dir, "subset_ratios.csv"), index=False)
 
 # save the DataFrame as a JSON file and then text file
-length_df.toPandas().to_json(os.path.join(output_dir, "subset_ratios.json"), orient="records")
+stats_df.toPandas().to_json(os.path.join(output_dir, "subset_ratios.json"), orient="records")
 
 # save the DataFrame as a table in a text file using tabulate
 from tabulate import tabulate
 with open(os.path.join(output_dir, "subset_ratios.txt"), "w") as f:
-    f.write(tabulate(length_df.toPandas(), headers="keys", tablefmt="psql"))
+    f.write(tabulate(stats_df.toPandas(), headers="keys", tablefmt="psql"))
 
 
 
