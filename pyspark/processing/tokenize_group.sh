@@ -1,5 +1,4 @@
 #! /bin/bash
-# Depreciated not working properly.
 # PySpark tokenization for group 2
 # Set variables
 DATA_PATH=/fsx/shared/pilev2/group3_filtered_decontam/group3_parquet
@@ -14,8 +13,7 @@ mkdir -p $spark_path/logs
 mkdir -p $spark_path/processing/logs
 
 # Create a list all of the directories in $DATA_PATH
-# datasets=$(ls $DATA_PATH)
-datasets=("TED2020" "AI4Code_ver2")
+datasets=$(ls $DATA_PATH)
 cpus=16
 mem=32
 partition=cpu32
