@@ -135,3 +135,7 @@ pile/processing/dedup/logs/*
 pile/processing/logs/*
 pile/processing/dedup/job_logs/*
 pile/processing/dedup/.temp_sbatch.slurm.swp
+pile/pyspark/spark-3.3.2-bin-hadoop3/*
+pyspark/spark-3.3.2-bin-hadoop3/*
+*.e
+*.o
