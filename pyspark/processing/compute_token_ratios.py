@@ -90,10 +90,52 @@ for obj in objects:
         subfolder_paths.add(folder)
 
 
+
+subfolder_paths = [
+    'ai4code_nbs',
+    'amps',
+    'arxiv',
+    'cc2',
+    'code_reddit_dialog',
+    'code_reddit_posts',
+    'competitive_programming',
+    'devdocs',
+    'discourse',
+    'dm_math',
+    'enwiki',
+    'euro_parl',
+    'free_law',
+    'github_issues',
+    'gutenberg',
+    'open_subtitles',
+    'other_wiki',
+    'pile_of_law',
+    'pubmed',
+    'reddit_dialogs',
+    's2orc',
+    'soda',
+    'stack_exchange',
+    'ted_talks',
+    'ubuntu_irc',
+    'uspto'
+]
+subfolder_paths = [f'pilev2_tokenized/{p}' for p in subfolder_paths]
+subfolder_paths = set(subfolder_paths)
+
+s3 = boto3.resource('s3')
+def get_all_files(prefix):
+    bucket_name = "stability-llm"
+    bucket = s3.Bucket(bucket_name)
+    objects = bucket.objects.filter(Prefix=prefix)
+    files = [obj.key for obj in objects if obj.key != prefix]  # exclude the folder itself from the results
+    return [f"s3a://{bucket_name}/{f}" for f in files if f.endswith('.json.gz')]
+
+
 # create a PySpark DataFrame for each folder that contains JSON files compressed with gzip
 for path in list(subfolder_paths):
     print(f"Processing folder: {path}") 
-    json_files = [f"s3a://{bucket}/{p}" for p in json_gz_paths[path]]
+    # json_files = [f"s3a://{bucket}/{p}" for p in json_gz_paths[path]]
+    json_files = get_all_files(path)
     print(f"Processing {len(json_files)} files...")
     # read all json.gz files in the directory as a single DataFrame
     json_df = spark.read.json(json_files)
@@ -147,6 +189,9 @@ with open(os.path.join(output_dir, "subset_ratios.txt"), "w") as f:
     f.write(tabulate(stats_df.toPandas(), headers="keys", tablefmt="psql"))
 
 
+# Write total token count to a text file
+with open(os.path.join(output_dir, "total_tokens.txt"), "w") as f:
+    f.write(str(total_length))
 
 
 
