@@ -1,5 +1,5 @@
 #! /bin/bash
-
+# Depreciated not working properly.
 # PySpark tokenization for group 2
 # Set variables
 DATA_PATH=/fsx/shared/pilev2/group3_filtered_decontam/group3_parquet
@@ -87,15 +87,15 @@ for hostname in $hostnames; do
     fi
 done
 
-node_name=$min_hostname
+    node_name=$min_hostname
 
-echo $node_name
-# get the job id as a string
-cluster_job_id=$(cat $spark_path/logs/$basename_dataset.jobid.txt)
-# get the first element of the job id
-cluster_job_id=$(echo $cluster_job_id | cut -d ' ' -f 1)
-echo $cluster_job_id
-worker_submission=./worker.slurm
+    echo $node_name
+    # get the job id as a string
+    cluster_job_id=$(cat $spark_path/logs/$basename_dataset.jobid.txt)
+    # get the first element of the job id
+    cluster_job_id=$(echo $cluster_job_id | cut -d ' ' -f 1)
+    echo $cluster_job_id
+    worker_submission=./worker.slurm
 cat << HELP > $worker_submission
 #!/bin/bash
 # job name is the basename of the dataset and file
@@ -125,4 +125,3 @@ HELP
     # pause for 2 seconds.
     sleep 2
 done
-
