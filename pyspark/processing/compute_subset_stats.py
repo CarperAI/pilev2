@@ -89,8 +89,6 @@ for obj in objects:
         json_gz_paths [folder].append(obj["Key"])
         subfolder_paths.add(folder)
 
-
-
 subfolder_paths = [
     'ai4code_nbs',
     'amps',
@@ -147,7 +145,8 @@ for path in list(subfolder_paths):
     # apply the python len function to each element of the input_ids attribute
     length_df = length_df.withColumn("input_ids_length", udf(lambda x: len(x), IntegerType())("input_ids_length"))
 
-
+    # compute number of documents in the directory
+    subset_num_docs = length_df.count()
     # compute the total length across all files in the directory
     subset_token_size = length_df.agg({"input_ids_length": "sum"}).collect()[0][0]
     # compute mean, median, and standard deviation of the length of input_ids and store in a dictionary
@@ -164,7 +163,7 @@ for path in list(subfolder_paths):
     display_path = path.split("/")[-1]
     subset_lengths[display_path] = subset_token_size
     # add the statistics of the current directory to the dictionary of statistics
-    subset_stats[display_path] = {"mean": subset_token_mean, "median": subset_token_median, "std": subset_token_std, "min": subset_token_min, "max": subset_token_max, "total_tokens": subset_token_size}
+    subset_stats[display_path] = {"mean": subset_token_mean, "median": subset_token_median, "std": subset_token_std, "min": subset_token_min, "max": subset_token_max, "total_tokens": subset_token_size, "num_docs": subset_num_docs}
 
 
 # create a PySpark DataFrame from the dictionary of subset stats
