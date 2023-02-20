@@ -16,7 +16,7 @@ mkdir -p $spark_path/processing/logs
 # Create a list all of the directories in $DATA_PATH
 # datasets=$(ls $DATA_PATH)
 datasets=("TED2020" "AI4Code_ver2")
-cpus=32
+cpus=16
 mem=32
 partition=cpu32
 nodes=2
@@ -36,10 +36,10 @@ for dataset in ${datasets[@]}; do
 #SBATCH --output=./logs/$basename_dataset.o
 #SBATCH --error=./logs/$basename_dataset.e
 #SBATCH --nodes=$nodes
-#SBATCH --exclusive
-#SBATCH --mem=0
+#SBATCH --mem=128GB
 #SBATCH --cpus-per-task=$cpus
 #SBATCH --partition=$partition
+#SBATCH --exclusive
 #SBATCH --comment=carper
 #SBATCH --export=ALL
 # ===== END SLURM OPTIONS =====
@@ -117,7 +117,8 @@ python pyspark_tokenize.py \
     --node $node_name \
     --num_cores $cpus \
     --memory $mem \
-    --cluster_job_id $cluster_job_id 
+    --cluster_job_id $cluster_job_id \
+    --dataset_name $basename_dataset
 HELP
     sbatch $worker_submission
     rm $worker_submission

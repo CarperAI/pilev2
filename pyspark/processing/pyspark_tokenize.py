@@ -52,6 +52,14 @@ parser.add_argument(
     help="The amount of memory in GB to use.",
 )
 
+parser.add_argument(
+    "--dataset_name",
+    type=str,
+    required=True,
+    
+    help="The name of the dataset.",
+)
+
 # get the cluster job id from args
 parser.add_argument(
     "--cluster_job_id",
@@ -113,8 +121,12 @@ if args.output_dir.startswith("s3a://"):
     s3 = boto3.resource("s3")
     bucket = s3.Bucket(output_dir.split("/")[0])
     bucket_name = output_dir.split("/")[0]
-    dataset_name = output_dir.split("/")[1]
-    files = [f"s3://{bucket_name}/{dataset_name}/{f.key}" for f in bucket.objects.filter(Prefix=output_dir.split("/")[2])]
+    # get the path until the dataset name
+    #TODO: This path thing does not work and is not general
+    # Use something like this: https://stackoverflow.com/questions/71577584/python-boto3-s3-list-only-current-directory-file-ignoring-subdirectory-files
+    dataset_name = '/'.join(output_dir.split("/")[:-1])
+    files = [f"s3://{bucket_name}/{dataset_name}/{f.key}" for f in bucket.objects.filter(Prefix=output_dir.split("/")[-1])]
+    print(files)
     for file in files:
         if file.endswith(".txt.gz"):
             print(f"aws s3 mv {file} {file.replace('.txt.gz', '.json.gz')}")
