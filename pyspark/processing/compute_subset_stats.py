@@ -14,6 +14,8 @@ import io
 from pyspark.sql.functions import udf
 from pyspark.sql.types import IntegerType
 import pandas as pd
+from pyspark.sql.types import StructType, StructField, IntegerType, ArrayType
+from pyspark.sql.functions import from_json
 
 
 parser = argparse.ArgumentParser()
@@ -79,17 +81,18 @@ objects = s3.list_objects_v2(Bucket=bucket, Prefix=prefix)["Contents"]
 json_gz_paths = {}
 
 # loop through each object in the S3 path and find the paths of the folders that contain JSON files compressed with gzip
-subfolder_paths = set()
-for obj in objects:
+# subfolder_paths = set()
+# for obj in objects:
 
-    if obj["Key"].endswith(".json.gz"):
-        folder = "/".join(obj["Key"].split("/")[:-1])
-        if folder not in json_gz_paths:
-            json_gz_paths [folder] = []
-        json_gz_paths [folder].append(obj["Key"])
-        subfolder_paths.add(folder)
+#     if obj["Key"].endswith(".json.gz"):
+#         folder = "/".join(obj["Key"].split("/")[:-1])
+#         if folder not in json_gz_paths:
+#             json_gz_paths [folder] = []
+#         json_gz_paths [folder].append(obj["Key"])
+#         subfolder_paths.add(folder)
 
 subfolder_paths = [
+    'the_stack',
     'ai4code_nbs',
     'amps',
     'arxiv',
@@ -116,30 +119,36 @@ subfolder_paths = [
     'soda',
     'stack_exchange',
     'ted_talks',
-    'the_stack',
     'ubuntu_irc',
     'uspto'
 ]
 subfolder_paths = [f'pilev2_tokenized/{p}' for p in subfolder_paths]
 subfolder_paths = set(subfolder_paths)
-
+schema = StructType([
+    StructField("input_ids", ArrayType(IntegerType()), True),
+    StructField("attention_mask", ArrayType(IntegerType()), True)
+])
 s3 = boto3.resource('s3')
 def get_all_files(prefix):
     bucket_name = "stability-llm"
     bucket = s3.Bucket(bucket_name)
     objects = bucket.objects.filter(Prefix=prefix)
     files = [obj.key for obj in objects if obj.key != prefix]  # exclude the folder itself from the results
-    return [f"s3a://{bucket_name}/{f}" for f in files if f.endswith('.json.gz')]
+    return [f"s3a://{bucket_name}/{f}" for f in files if f.endswith('.json.gz') or f.endswith('.txt.gz')]
 
 
 # create a PySpark DataFrame for each folder that contains JSON files compressed with gzip
 for path in list(subfolder_paths):
     print(f"Processing folder: {path}") 
     # json_files = [f"s3a://{bucket}/{p}" for p in json_gz_paths[path]]
-    json_files = get_all_files(path)
+    json_files = get_all_files(path)[:2]
     print(f"Processing {len(json_files)} files...")
     # read all json.gz files in the directory as a single DataFrame
-    json_df = spark.read.json(json_files)
+    if json_files[0].endswith('.txt.gz'):
+        json_df = spark.read.text(json_files)
+        json_df = json_df.select(from_json(json_df.value, schema).alias("data")).select("data.*")
+    else:
+        json_df = spark.read.json(json_files)
     # select only the input_ids attribute and compute its length
     length_df = json_df.select(col("input_ids").alias("input_ids_length"))
     # apply the python len function to each element of the input_ids attribute

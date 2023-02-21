@@ -64,7 +64,7 @@ node_name=$min_hostname
 echo "Connecting to node $node_name"
 
 cd $spark_path/processing
-python compute_subset_stats.py --data_dir $S3_PATH --output_dir $OUTPUT_PATH --node $node_name --num_cores 16 --memory 64
+python -u compute_subset_stats.py --data_dir $S3_PATH --output_dir $OUTPUT_PATH --node $node_name --num_cores 16 --memory 64
 
 # kill the spark cluster
 scancel $job_id
