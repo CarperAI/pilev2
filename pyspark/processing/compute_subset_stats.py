@@ -141,7 +141,7 @@ def get_all_files(prefix):
 for path in list(subfolder_paths):
     print(f"Processing folder: {path}") 
     # json_files = [f"s3a://{bucket}/{p}" for p in json_gz_paths[path]]
-    json_files = get_all_files(path)[:2]
+    json_files = get_all_files(path)
     print(f"Processing {len(json_files)} files...")
     # read all json.gz files in the directory as a single DataFrame
     if json_files[0].endswith('.txt.gz'):
