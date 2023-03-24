@@ -1,0 +1,11 @@
+apache-beam[gcp]
+tf-sentencepiece
+tensorboard
+tensorflow
+tensorflow-estimator
+tensorflow-hub
+tensorflow-text
+nltk
+ujson
+jsonlines
+datasets
