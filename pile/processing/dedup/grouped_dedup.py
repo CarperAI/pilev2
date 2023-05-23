@@ -210,7 +210,6 @@ if __name__ == "__main__":
         threshold: float = typer.Option(0.7, help="Minhash threshold"),
         output: str = typer.Option(None, help="Store the deduplicated dataset"),
     ):
-        global uf
         OUTPUT_BASE = Path(output or "output")
         OUTPUT_BASE.mkdir(exist_ok=True, parents=True)
         output = OUTPUT_BASE / "deduplicated"
@@ -221,6 +220,7 @@ if __name__ == "__main__":
             data = json.load(f)
         in_common = data.pop("common_group")
         for group_name in ["group_1", "group_2"]:
+            uf = UnionFind()
             time_measures = {}
             start_time = time.time()
             B, R = optimal_param(threshold, num_perm)
@@ -343,5 +343,4 @@ if __name__ == "__main__":
             logger.info("🤗 Happy Deduplicating 🤗")
 
     mp.set_start_method("fork", force=True)
-    uf = UnionFind()
     typer.run(run)
